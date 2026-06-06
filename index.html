@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jorge Hinojosa — Automation Engineer portfolio. Python, C#, Civil 3D, Power Apps automation for field operations and CAD workflows." />
+  <title>Jorge Hinojosa | Engineering Automation Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --surface-alt: #f8f9fa;
+      --border: #cfd6df;
+      --border-light: #e3e8ef;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #6b7280;
+      --accent: #1e3a5f;
+      --accent-hover: #15304f;
+      --accent-light: #e9f0f8;
+      --tag-bg: #eef2f7;
+      --tag-text: #2c4a6e;
+      --tag-border: #c8d5e6;
+      --code-bg: #f3f4f6;
+      --code-text: #374151;
+      --cat-cad: #3b6fa0;
+      --cat-python: #2a7f6f;
+      --cat-powerapps: #b07d2e;
+      --cat-default: #5a6a7a;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-logo {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── Header / Hero ── */
+    header {
+      background:
+        radial-gradient(circle at top right, rgba(30, 58, 95, 0.08), transparent 34%),
+        linear-gradient(180deg, #eef3f8 0%, var(--surface) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 38px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 168px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 10px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.05rem, 4vw, 2.85rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin: 0 0 10px;
+      color: var(--text-primary);
+    }
+
+    .hero-title {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin: 0 0 16px;
+    }
+
+    .hero-summary {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 680px;
+      line-height: 1.62;
+      margin: 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 6px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .hero-badge svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+    }
+
+    .hero-badge strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent-hover);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(17, 24, 39, 0.05);
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 14px 18px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      min-width: 0;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Contact Bar ── */
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 26px;
+      margin-top: 22px;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-item a {
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover { color: var(--accent); }
+
+    .contact-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      opacity: 0.55;
+    }
+
+    /* ── Main ── */
+    main { padding: 42px 0 64px; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 52px; }
+
+    .section-header {
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 4px;
+    }
+
+    .section-sub {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* ── Project Cards ── */
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--cat-default);
+      border-radius: 8px;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(17, 24, 39, 0.06);
+      border-color: var(--border);
+    }
+
+    .card[data-category="cad"]        { border-left-color: var(--cat-cad); }
+    .card[data-category="python"]     { border-left-color: var(--cat-python); }
+    .card[data-category="powerapps"]  { border-left-color: var(--cat-powerapps); }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--tag-border);
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 8px;
+    }
+
+    .card-title a {
+      color: var(--text-primary);
+      transition: color 0.2s;
+    }
+
+    .card-title a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .card-impact {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin: 0 0 8px;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Demo Box ── */
+    .demo-box {
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      background: var(--code-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 12px;
+      text-align: center;
+      min-height: 145px;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover .demo-box { border-color: var(--border); }
+
+    .demo-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .demo-icon {
+      width: 32px;
+      height: 32px;
+      opacity: 0.3;
+    }
+
+    .demo-path {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--code-text);
+      word-break: break-all;
+    }
+
+
+
+    /* ── Demo Modal ── */
+    .demo-box {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .demo-box:hover,
+    .demo-box:focus-visible {
+      border-color: var(--accent);
+      background: #eef3f9;
+      outline: none;
+    }
+
+    .demo-box::after {
+      content: 'Click to enlarge';
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      font-size: 0.64rem;
+      font-weight: 600;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .demo-box:hover::after,
+    .demo-box:focus-visible::after {
+      opacity: 0.85;
+    }
+
+    .demo-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(17, 24, 39, 0.76);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .demo-modal.is-open {
+      display: flex;
+    }
+
+    .demo-modal-panel {
+      width: min(960px, 100%);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      overflow: hidden;
+    }
+
+    .demo-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .demo-modal-title {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .demo-modal-close {
+      border: 1px solid var(--border-light);
+      background: var(--surface-alt);
+      color: var(--text-primary);
+      border-radius: 6px;
+      width: 34px;
+      height: 34px;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .demo-modal-close:hover,
+    .demo-modal-close:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .demo-modal-body {
+      padding: 16px;
+      background: #0f172a;
+    }
+
+    .demo-modal-video {
+      display: block;
+      width: 100%;
+      max-height: 72vh;
+      background: #020617;
+      border-radius: 6px;
+    }
+
+    .demo-modal-note {
+      margin: 10px 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      word-break: break-all;
+    }
+
+    /* ── Skills ── */
+    .skills-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 21px 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .skill-group:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .skill-group-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .skill:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .skill::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── Contact Section ── */
+    .contact-section {
+      background: linear-gradient(135deg, #e9eef5 0%, var(--surface) 60%);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 36px 32px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    .contact-section p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0 0 24px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .contact-btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .contact-btn.primary:hover { background: var(--accent-hover); }
+
+    .contact-btn.secondary {
+      background: var(--surface-alt);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .contact-btn.secondary:hover { background: var(--accent-light); }
+
+    .contact-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border-light);
+      padding: 24px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .stat-box { min-width: 100px; }
+      .card { grid-template-columns: 1fr; }
+      .demo-box { min-height: 100px; }
+      .contact-bar { flex-direction: column; gap: 8px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 0.78rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">JH</span>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Engineering Automation Portfolio</p>
+        <h1 class="hero-name">Jorge Hinojosa</h1>
+        <p class="hero-title">Automation Engineer &mdash; Field Operations &bull; CAD Workflows &bull; Process Engineering</p>
+        <p class="hero-summary">
+          Mechanical engineer from Rice University focused on heavy civil and geotechnical field operations. I build practical automation &mdash;
+          Python scripts, Civil 3D plugins, Power Apps, and reporting pipelines &mdash; that reduces repetitive work, cuts manual errors,
+          and turns field and office workflows into repeatable systems.
+        </p>
+        <div class="hero-badge">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L1 5l7 4 7-4-7-4z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3 7v4c0 1.5 2.5 3 5 3s5-1.5 5-3V7" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+          <span><strong>Rice University</strong> &mdash; B.S. Mechanical Engineering, 2025</span>
+        </div>
+        <a href="#projects" class="hero-cta">
+          View Projects
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <span class="stat-number">10</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">40+</span>
+          <span class="stat-label">Automations</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">6</span>
+          <span class="stat-label">Languages</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-bar">
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 4l6 5 6-5H2z" fill="currentColor"/>
+          <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+        <a href="mailto:hinojosasb72@gmail.com">hinojosasb72@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <circle cx="8" cy="6" r="1.5" fill="currentColor"/>
+        </svg>
+        Cameron Parish, LA
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 1C4.13 1 1 4.13 1 8c0 3.12 2.02 5.77 4.82 6.71.35.06.48-.15.48-.34v-1.18C4.56 14.1 4.12 12.9 4.12 12.9c-.34-.86-.83-1.09-.83-1.09-.68-.46.05-.45.05-.45.75.05 1.14.77 1.14.77.67 1.14 1.75.81 2.18.62.07-.48.26-.81.47-1-1.67-.19-3.43-.84-3.43-3.72 0-.82.29-1.49.77-2.02-.08-.19-.33-.96.07-2 0 0 .63-.2 2.07.77a7.2 7.2 0 011.88-.25c.64 0 1.28.08 1.88.25 1.44-.97 2.07-.77 2.07-.77.41 1.04.16 1.81.08 2 .48.53.77 1.2.77 2.02 0 2.89-1.76 3.53-3.44 3.72.27.23.51.69.51 1.4v2.07c0 .19.13.41.49.34C12.98 13.77 15 11.12 15 8c0-3.87-3.13-7-7-7z" fill="currentColor"/>
+        </svg>
+        <a href="https://github.com/bufordcore-droid" target="_blank" rel="noopener">github.com/bufordcore-droid</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Projects -->
+  <div id="projects" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="section-sub">Automation work across Civil 3D, Python, Power Apps, Excel, and internal workflow systems</p>
+    </div>
+
+    <div class="projects">
+
+      <article class="card" data-category="cad">
+        <div>
+          <div class="card-meta">
+            <span class="tag">C# / .NET 8</span>
+            <span class="tag">Civil 3D</span>
+            <span class="tag">Local AI</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/entact-CIVIL3D-Assistant" target="_blank" rel="noopener">entact Civil 3D Assistant</a></h3>
+          <p class="card-impact">Brings AI-guided drafting actions directly into Civil 3D with local-only model support.</p>
+          <p class="card-desc">SmartSearch assistant plugin for AutoCAD Civil 3D. Handles action planning, local model checks, command execution, and audit logging for layer operations, point import/export, and plot-to-PDF workflows.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/entact-civil3d-assistant.mp4" aria-label="Open demo video: assets/demos/entact-civil3d-assistant.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/entact-civil3d-assistant.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="cad">
+        <div>
+          <div class="card-meta">
+            <span class="tag">AutoLISP</span>
+            <span class="tag">Python</span>
+            <span class="tag">AutoCAD</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/entact-Automations" target="_blank" rel="noopener">entact Automations</a></h3>
+          <p class="card-impact">Centralizes 40+ production automations for grid work, extraction, cleanup, DAR workflows, and internal apps.</p>
+          <p class="card-desc">A broad automation library covering grid management, extraction, QA/cleanup, DAR operations, Python utilities, and lightweight apps — representing a full body of workflow automation.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/entact-automations.mp4" aria-label="Open demo video: assets/demos/entact-automations.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/entact-automations.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="powerapps">
+        <div>
+          <div class="card-meta">
+            <span class="tag">Power Apps</span>
+            <span class="tag">Field Operations</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/dar-app" target="_blank" rel="noopener">DAR App</a></h3>
+          <p class="card-impact">Packages daily activity report workflows into a structured field app.</p>
+          <p class="card-desc">A DAR application built for entact workflows. Reduces repetitive manual entry, keeps reporting structured, and supports faster field-to-report operations.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/dar-app.mp4" aria-label="Open demo video: assets/demos/dar-app.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/dar-app.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <div class="card-meta">
+            <span class="tag">Python</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Outlook</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/dar-report-fill" target="_blank" rel="noopener">DAR Report Fill</a></h3>
+          <p class="card-impact">Connects extracted email data, workbook templates, and pipeline scripts into an automated reporting process.</p>
+          <p class="card-desc">A Python-based DAR reporting pipeline with workbook filling, Outlook extraction helpers, pipeline runners, and structured logging for standardized report output.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/dar-report-fill.mp4" aria-label="Open demo video: assets/demos/dar-report-fill.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/dar-report-fill.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <div class="card-meta">
+            <span class="tag">Python</span>
+            <span class="tag">Excel VBA</span>
+            <span class="tag">QA/QC</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/QA-QC-WORKBOOKS" target="_blank" rel="noopener">QA/QC Workbooks</a></h3>
+          <p class="card-impact">Generates daily QA/QC workbooks for survey point checks against design targets.</p>
+          <p class="card-desc">Automated workbook generator for elevation QA/QC. Builds area-specific Excel workbooks and supports repeatable daily checking workflows with macro-enabled spreadsheets.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/qa-qc-workbooks.mp4" aria-label="Open demo video: assets/demos/qa-qc-workbooks.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/qa-qc-workbooks.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="powerapps">
+        <div>
+          <div class="card-meta">
+            <span class="tag">Power Apps</span>
+            <span class="tag">Logging</span>
+            <span class="tag">Operations</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/LOAD-COUNT-APP" target="_blank" rel="noopener">Load Count App</a></h3>
+          <p class="card-impact">Turns manual load count logging into a structured app workflow.</p>
+          <p class="card-desc">A Power Apps-based load count logging tool built for operations reporting. Simplifies data entry and gives teams a dedicated app for tracking recurring field activity.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/load-count-app.mp4" aria-label="Open demo video: assets/demos/load-count-app.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/load-count-app.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <div class="card-meta">
+            <span class="tag">Python</span>
+            <span class="tag">PDF</span>
+            <span class="tag">Tkinter</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/DAR-COMPRESSOR" target="_blank" rel="noopener">DAR Compressor</a></h3>
+          <p class="card-impact">Reduces PDF file sizes through a lightweight desktop utility built for quick daily use.</p>
+          <p class="card-desc">A minimal Windows desktop utility for compressing PDFs with selectable presets. Keeps the interface simple while handling document size reduction for reporting workflows.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/dar-compressor.mp4" aria-label="Open demo video: assets/demos/dar-compressor.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/dar-compressor.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <div class="card-meta">
+            <span class="tag">Python</span>
+            <span class="tag">CSV</span>
+            <span class="tag">Grid Workflow</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/Auto-Grid-Automation-Tool" target="_blank" rel="noopener">Auto Grid Automation Tool</a></h3>
+          <p class="card-impact">Automates grid preparation by filtering, deduplicating, and merging daily point data.</p>
+          <p class="card-desc">A grid automation workflow for preparing drawing inputs from CSV files. Streamlines pre-processing steps so grid creation starts with clean, consolidated data.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/auto-grid-automation-tool.mp4" aria-label="Open demo video: assets/demos/auto-grid-automation-tool.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/auto-grid-automation-tool.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="cad">
+        <div>
+          <div class="card-meta">
+            <span class="tag">C# / .NET 8</span>
+            <span class="tag">Civil 3D</span>
+            <span class="tag">Geospatial</span>
+          </div>
+          <h3 class="card-title">MasterFlow Heat Map Automation</h3>
+          <p class="card-impact">Collapses a multi-step cut/fill heat map workflow into a single Civil 3D command.</p>
+          <p class="card-desc">Imports comparison and base surfaces, brings in a boundary, creates a TIN volume surface, and applies color-coded cut/fill analysis through one automated workflow.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/masterflow-heatmap.mp4" aria-label="Open demo video: assets/demos/masterflow-heatmap.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/masterflow-heatmap.mp4</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <div class="card-meta">
+            <span class="tag">Python</span>
+            <span class="tag">Outlook COM</span>
+            <span class="tag">Excel</span>
+          </div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/dar-outlook-extract" target="_blank" rel="noopener">DAR Outlook Extract</a></h3>
+          <p class="card-impact">Converts structured daily report emails into JSON and Excel for downstream reporting.</p>
+          <p class="card-desc">Reads Outlook email data, parses structured daily activity reports, and exports standardized JSON and Excel outputs for the next step in the reporting pipeline.</p>
+        </div>
+        <div class="demo-box" role="button" tabindex="0" data-demo-video="assets/demos/dar-outlook-extract.mp4" aria-label="Open demo video: assets/demos/dar-outlook-extract.mp4">
+          <svg class="demo-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          <span class="demo-label">Demo</span>
+          <span class="demo-path">assets/demos/dar-outlook-extract.mp4</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div id="skills" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Core Skills</h2>
+      <p class="section-sub">Technical areas applied across portfolio projects</p>
+    </div>
+    <div class="skills-categories">
+      <div class="skill-group">
+        <h3 class="skill-group-title">Languages &amp; Frameworks</h3>
+        <div class="skills-grid">
+          <span class="skill">Python</span>
+          <span class="skill">C# / .NET</span>
+          <span class="skill">AutoLISP</span>
+          <span class="skill">VBA / Excel Macros</span>
+          <span class="skill">Power Fx</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="skill-group-title">Tools &amp; Platforms</h3>
+        <div class="skills-grid">
+          <span class="skill">AutoCAD Civil 3D</span>
+          <span class="skill">Power Apps</span>
+          <span class="skill">Outlook COM</span>
+          <span class="skill">Excel / CSV Processing</span>
+          <span class="skill">PDF Processing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 class="skill-group-title">Domains</h3>
+        <div class="skills-grid">
+          <span class="skill">Workflow Design</span>
+          <span class="skill">Process Automation</span>
+          <span class="skill">Data Extraction</span>
+          <span class="skill">Reporting Pipelines</span>
+          <span class="skill">QA/QC Systems</span>
+          <span class="skill">Internal UI Tools</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact" class="section">
+    <div class="contact-section">
+      <h2>Let's Connect</h2>
+      <p>Interested in my automation work or have a project in mind? I'd like to hear from you.</p>
+      <div class="contact-links">
+        <a href="mailto:hinojosasb72@gmail.com" class="contact-btn primary">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5H2z" fill="currentColor"/><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+          Email Me
+        </a>
+        <a href="https://github.com/bufordcore-droid" target="_blank" rel="noopener" class="contact-btn secondary">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1C4.13 1 1 4.13 1 8c0 3.12 2.02 5.77 4.82 6.71.35.06.48-.15.48-.34v-1.18C4.56 14.1 4.12 12.9 4.12 12.9c-.34-.86-.83-1.09-.83-1.09-.68-.46.05-.45.05-.45.75.05 1.14.77 1.14.77.67 1.14 1.75.81 2.18.62.07-.48.26-.81.47-1-1.67-.19-3.43-.84-3.43-3.72 0-.82.29-1.49.77-2.02-.08-.19-.33-.96.07-2 0 0 .63-.2 2.07.77a7.2 7.2 0 011.88-.25c.64 0 1.28.08 1.88.25 1.44-.97 2.07-.77 2.07-.77.41 1.04.16 1.81.08 2 .48.53.77 1.2.77 2.02 0 2.89-1.76 3.53-3.44 3.72.27.23.51.69.51 1.4v2.07c0 .19.13.41.49.34C12.98 13.77 15 11.12 15 8c0-3.87-3.13-7-7-7z" fill="currentColor"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-note">&copy; 2026 Jorge Hinojosa &mdash; Automation Engineer</p>
+      <div class="footer-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<div class="demo-modal" id="demo-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title">
+  <div class="demo-modal-panel" role="document">
+    <div class="demo-modal-header">
+      <h2 class="demo-modal-title" id="demo-modal-title">Project Demo</h2>
+      <button class="demo-modal-close" id="demo-modal-close" type="button" aria-label="Close demo video">&times;</button>
+    </div>
+    <div class="demo-modal-body">
+      <video class="demo-modal-video" id="demo-modal-video" controls preload="metadata">
+        <source src="" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p class="demo-modal-note" id="demo-modal-path"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const demoModal = document.getElementById('demo-modal');
+  const demoModalVideo = document.getElementById('demo-modal-video');
+  const demoModalTitle = document.getElementById('demo-modal-title');
+  const demoModalPath = document.getElementById('demo-modal-path');
+  const demoModalClose = document.getElementById('demo-modal-close');
+  let lastFocusedDemo = null;
+
+  function openDemoModal(demoBox) {
+    const videoPath = demoBox.dataset.demoVideo;
+    const card = demoBox.closest('.card');
+    const projectTitle = card?.querySelector('.card-title')?.textContent?.trim() || 'Project Demo';
+
+    lastFocusedDemo = demoBox;
+    demoModalTitle.textContent = projectTitle;
+    demoModalPath.textContent = videoPath;
+    demoModalVideo.querySelector('source').src = videoPath;
+    demoModalVideo.load();
+    demoModal.classList.add('is-open');
+    demoModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    demoModalClose.focus();
+  }
+
+  function closeDemoModal() {
+    demoModal.classList.remove('is-open');
+    demoModal.setAttribute('aria-hidden', 'true');
+    demoModalVideo.pause();
+    demoModalVideo.removeAttribute('src');
+    demoModalVideo.querySelector('source').src = '';
+    demoModalVideo.load();
+    document.body.style.overflow = '';
+    if (lastFocusedDemo) lastFocusedDemo.focus();
+  }
+
+  document.querySelectorAll('.demo-box').forEach((demoBox) => {
+    demoBox.addEventListener('click', () => openDemoModal(demoBox));
+    demoBox.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openDemoModal(demoBox);
+      }
+    });
+  });
+
+  demoModalClose.addEventListener('click', closeDemoModal);
+  demoModal.addEventListener('click', (event) => {
+    if (event.target === demoModal) closeDemoModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && demoModal.classList.contains('is-open')) {
+      closeDemoModal();
+    }
+  });
+</script>
+
+</body>
+</html>
