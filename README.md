@@ -19,5 +19,5 @@ This README is intentionally lightweight. Add project-specific run commands, sou
 
 - [`TODO.md`](TODO.md) — active/pending work list.
 - [`AGENTS.md`](AGENTS.md) — project-specific agent rules.
-- [`diagram.html`](diagram.html) — visual workflow and folder map.
+- [`diagram.excalidraw`](diagram.excalidraw) — visual workflow and folder map.
 

@@ -14,7 +14,7 @@ This folder is a `career` workspace/project area. Treat it as its own work packa
 - Check this folder's `TODO.md` before starting work.
 - Keep edits scoped to this folder unless the user asks for cross-project changes.
 - Preserve source inputs and create generated outputs separately when practical.
-- Update `README.md`, `TODO.md`, and `diagram.html` when behavior or workflow changes.
+- Update `README.md`, `TODO.md`, and `diagram.excalidraw` when behavior or workflow changes.
 - Before final response, run the smallest useful verification and report git status for the active repo or workspace root.
 
 ## Verification
