@@ -4,7 +4,7 @@ Purpose: Portfolio project.
 
 ## Active TODOs
 
-- [ ] Add current work items here when this folder becomes active.
+- [ ] Add OpenMANET and Meshtastic visuals to `assets/interests/` and replace the on-page placeholders with final images.
 
 ## Backlog / Ideas
 

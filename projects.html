@@ -745,8 +745,96 @@
       .footer-inner { flex-direction: column; text-align: center; }
     }
   </style>
-<style>.page-header{padding:46px 0 34px;background:linear-gradient(180deg,#eef3f8 0%,var(--surface) 100%);border-bottom:1px solid var(--border)}.page-header h1{margin:0;color:var(--text-primary);font-size:clamp(2rem,4vw,2.8rem);line-height:1.12}.page-header p{max-width:660px;margin:10px 0 0;color:var(--text-secondary)}.page-eyebrow{margin:0 0 8px!important;color:var(--accent)!important;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.nav-logo{display:block;text-decoration:none}</style><style>.resume-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.resume-action{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--accent);font:inherit;font-size:.85rem;font-weight:700;cursor:pointer}.resume-action.primary{background:var(--accent);border-color:var(--accent);color:#fff}.resume-preview{height:min(75vh,960px);overflow:hidden;border:1px solid var(--border-light);border-radius:10px;background:#f8f9fa}.resume-preview object{display:block;width:100%;height:100%}.resume-note{margin:16px 0 0;color:var(--text-muted);font-size:.82rem}</style><style>.hero-grid{grid-template-columns:minmax(0,1fr)}.education-highlight{max-width:640px;padding:16px 18px 16px 15px;border-left:5px solid var(--accent);border-radius:8px;box-shadow:0 8px 20px rgba(17,24,39,.08)}.education-highlight .education-school{font-size:1.06rem}.education-rigor{display:block;margin-top:5px;color:var(--text-secondary);font-size:.8rem;line-height:1.35}</style></head><body><nav><div class="nav-inner"><a class="nav-logo" href="index.html">JH</a><div class="nav-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="timeline.html">Timeline</a><a href="interests.html">Interests</a><a href="education.html">Education</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div></div></nav><header><div class="container"><div class="hero-grid"><div><h1 class="hero-name">Jorge Hinojosa</h1><p class="hero-title">Projects, tools, and ideas built to make complicated work simpler.</p><p class="hero-summary"><strong>[REVIEW]</strong> I build practical systems that make work easier to trust, easier to repeat, and easier to improve. My focus is understanding the real workflow, removing unnecessary friction, and delivering tools people can actually use.</p><div class="hero-badge education-highlight" aria-label="Rice University, Bachelor of Science in Mechanical Engineering, 2025"><span class="education-emblem" aria-hidden="true">★</span><span class="education-copy"><span class="education-school">Rice University</span><span class="education-degree">B.S. Mechanical Engineering &middot; 2025</span><span class="education-rigor">Rigorous foundation in analytical problem-solving, design, and systems thinking.</span></span></div><a href="projects.html" class="hero-cta">View Projects</a></div></div></div></header>
-<main class="container"><div id="projects" class="section"><div class="featured-carousel" data-featured-carousel aria-label="Featured projects gallery"><article class="featured-slide is-active"><img src="assets/featured/clifty-creek-power-plant.jpg" alt="Clifty Creek Power Plant complex in Madison, Indiana" /><div class="featured-slide-content"><p class="featured-slide-kicker">Featured project 01</p><h3 class="featured-slide-title">Clifty Creek Landfill Construction &amp; Pond Enclosures</h3><p class="featured-slide-summary"><strong>[REVIEW]</strong> Add your role, scope, timeline, and project results.</p><p class="featured-credit">Photo: Crowezr, <a href="https://commons.wikimedia.org/wiki/File:Clifty_Creek_Power_Plant_Complex.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a>.</p></div></article><article class="featured-slide"><img src="assets/featured/vogtle-units-3-4.png" alt="NRC inspectors at Plant Vogtle Units 3 and 4" /><div class="featured-slide-content"><p class="featured-slide-kicker">Featured project 02</p><h3 class="featured-slide-title">VG CP2 Soil Remediation</h3><p class="featured-slide-summary"><strong>[REVIEW]</strong> Confirm whether VG CP2 refers to Plant Vogtle, then add your role, scope, timeline, and project results.</p><p class="featured-credit">Photo: U.S. Nuclear Regulatory Commission, <a href="https://commons.wikimedia.org/wiki/File:NRC_Inspectors_at_Vogtle_Units_3_and_4_(52797684671).png" target="_blank" rel="noopener">CC BY 2.0</a>.</p></div></article><article class="featured-slide featured-placeholder-slide"><div class="featured-slide-content"><p class="featured-slide-kicker">Featured project 03</p><h3 class="featured-slide-title">Your next project story</h3><p class="featured-slide-summary">This slide is ready for the third project when you are.</p></div></article><button class="featured-carousel-control prev" type="button" data-featured-prev aria-label="Show previous featured project">←</button><button class="featured-carousel-control next" type="button" data-featured-next aria-label="Show next featured project">→</button><div class="featured-carousel-nav" aria-label="Choose featured project"><button class="featured-carousel-dot is-active" type="button" data-featured-dot aria-label="Show featured project 1"></button><button class="featured-carousel-dot" type="button" data-featured-dot aria-label="Show featured project 2"></button><button class="featured-carousel-dot" type="button" data-featured-dot aria-label="Show featured project 3"></button></div></div></div></main><footer><div class="container"><div class="footer-inner"><p class="footer-note">&copy; 2026 Jorge Hinojosa</p><div class="footer-links"><a href="projects.html">Projects</a><a href="timeline.html">Timeline</a><a href="interests.html">Interests</a><a href="education.html">Education</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div></div></div></footer><script>
-const featuredCarousel = document.querySelector('[data-featured-carousel]');
-if (featuredCarousel) { const slides = Array.from(featuredCarousel.querySelectorAll('.featured-slide')); const dots = Array.from(featuredCarousel.querySelectorAll('[data-featured-dot]')); let index = 0; let timer; const show = (nextIndex) => { index = (nextIndex + slides.length) % slides.length; slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index)); dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index)); }; const restart = () => { window.clearInterval(timer); timer = window.setInterval(() => show(index + 1), 7000); }; featuredCarousel.querySelector('[data-featured-prev]').addEventListener('click', () => { show(index - 1); restart(); }); featuredCarousel.querySelector('[data-featured-next]').addEventListener('click', () => { show(index + 1); restart(); }); dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); restart(); })); restart(); }
-</script></body></html>
+<style>.page-header{padding:46px 0 34px;background:linear-gradient(180deg,#eef3f8 0%,var(--surface) 100%);border-bottom:1px solid var(--border)}.page-header h1{margin:0;color:var(--text-primary);font-size:clamp(2rem,4vw,2.8rem);line-height:1.12}.page-header p{max-width:660px;margin:10px 0 0;color:var(--text-secondary)}.page-eyebrow{margin:0 0 8px!important;color:var(--accent)!important;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.nav-logo{display:block;text-decoration:none}</style><style>.resume-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.resume-action{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--accent);font:inherit;font-size:.85rem;font-weight:700;cursor:pointer}.resume-action.primary{background:var(--accent);border-color:var(--accent);color:#fff}.resume-preview{height:min(75vh,960px);overflow:hidden;border:1px solid var(--border-light);border-radius:10px;background:#f8f9fa}.resume-preview object{display:block;width:100%;height:100%}.resume-note{margin:16px 0 0;color:var(--text-muted);font-size:.82rem}</style></head><body><nav><div class="nav-inner"><a class="nav-logo" href="index.html">JH</a><div class="nav-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="timeline.html">Timeline</a><a href="interests.html">Interests</a><a href="education.html">Education</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div></div></nav><header class="page-header"><div class="container"><p class="page-eyebrow">Portfolio</p><h1>Projects</h1><p>Tools, automations, and systems built to make complicated work simpler.</p></div></header><main class="container"><div class="section"><div class="section-header"><h2 class="section-title">Selected Work</h2><p class="section-sub">Additional projects, tools, and workflow improvements</p></div><div class="projects">
+
+      <article class="card" data-category="cad">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/entact-CIVIL3D-Assistant" target="_blank" rel="noopener">entact Civil 3D Assistant</a></h3>
+          <p class="card-impact">Brings AI-guided drafting actions directly into Civil 3D with local-only model support.</p>
+          <p class="card-desc">SmartSearch assistant plugin for AutoCAD Civil 3D. Handles action planning, local model checks, command execution, and audit logging for layer operations, point import/export, and plot-to-PDF workflows.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="cad">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/entact-Automations" target="_blank" rel="noopener">entact Automations</a></h3>
+          <p class="card-impact">Centralizes 40+ production automations for grid work, extraction, cleanup, DAR workflows, and internal apps.</p>
+          <p class="card-desc">A broad automation library covering grid management, extraction, QA/cleanup, DAR operations, Python utilities, and lightweight apps — representing a full body of workflow automation.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="powerapps">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/dar-app" target="_blank" rel="noopener">DAR App</a></h3>
+          <p class="card-impact">Packages daily activity report workflows into a structured field app.</p>
+          <p class="card-desc">A DAR application built for entact workflows. Reduces repetitive manual entry, keeps reporting structured, and supports faster field-to-report operations.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/dar-report-fill" target="_blank" rel="noopener">DAR Report Fill</a></h3>
+          <p class="card-impact">Connects extracted email data, workbook templates, and pipeline scripts into an automated reporting process.</p>
+          <p class="card-desc">A Python-based DAR reporting pipeline with workbook filling, Outlook extraction helpers, pipeline runners, and structured logging for standardized report output.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/QA-QC-WORKBOOKS" target="_blank" rel="noopener">QA/QC Workbooks</a></h3>
+          <p class="card-impact">Generates daily QA/QC workbooks for survey point checks against design targets.</p>
+          <p class="card-desc">Automated workbook generator for elevation QA/QC. Builds area-specific Excel workbooks and supports repeatable daily checking workflows with macro-enabled spreadsheets.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="powerapps">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/LOAD-COUNT-APP" target="_blank" rel="noopener">Load Count App</a></h3>
+          <p class="card-impact">Turns manual load count logging into a structured app workflow.</p>
+          <p class="card-desc">A Power Apps-based load count logging tool built for operations reporting. Simplifies data entry and gives teams a dedicated app for tracking recurring field activity.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/DAR-COMPRESSOR" target="_blank" rel="noopener">DAR Compressor</a></h3>
+          <p class="card-impact">Reduces PDF file sizes through a lightweight desktop utility built for quick daily use.</p>
+          <p class="card-desc">A minimal Windows desktop utility for compressing PDFs with selectable presets. Keeps the interface simple while handling document size reduction for reporting workflows.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/Auto-Grid-Automation-Tool" target="_blank" rel="noopener">Auto Grid Automation Tool</a></h3>
+          <p class="card-impact">Automates grid preparation by filtering, deduplicating, and merging daily point data.</p>
+          <p class="card-desc">A grid automation workflow for preparing drawing inputs from CSV files. Streamlines pre-processing steps so grid creation starts with clean, consolidated data.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="cad">
+        <div>
+          <h3 class="card-title">MasterFlow Heat Map Automation</h3>
+          <p class="card-impact">Collapses a multi-step cut/fill heat map workflow into a single Civil 3D command.</p>
+          <p class="card-desc">Imports comparison and base surfaces, brings in a boundary, creates a TIN volume surface, and applies color-coded cut/fill analysis through one automated workflow.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+      <article class="card" data-category="python">
+        <div>
+          <h3 class="card-title"><a href="https://github.com/bufordcore-droid/dar-outlook-extract" target="_blank" rel="noopener">DAR Outlook Extract</a></h3>
+          <p class="card-impact">Converts structured daily report emails into JSON and Excel for downstream reporting.</p>
+          <p class="card-desc">Reads Outlook email data, parses structured daily activity reports, and exports standardized JSON and Excel outputs for the next step in the reporting pipeline.</p>
+        </div>
+        <div class="demo-box demo-placeholder" aria-label="Project evidence coming soon"><svg class="demo-icon" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/></svg><span class="demo-label">Evidence Coming Soon</span><span class="demo-path">Video, screenshot, or project diagram</span></div>
+      </article>
+
+    </div></div></main><footer><div class="container"><div class="footer-inner"><p class="footer-note">&copy; 2026 Jorge Hinojosa</p><div class="footer-links"><a href="projects.html">Projects</a><a href="timeline.html">Timeline</a><a href="interests.html">Interests</a><a href="education.html">Education</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div></div></div></footer></body></html>
