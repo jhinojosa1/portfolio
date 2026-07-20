@@ -4,7 +4,18 @@ Purpose: Portfolio project.
 
 ## Active TODOs
 
+- [ ] Complete the three featured case studies with Jorge's role, dates, scope, decisions, and verified results.
+
 - [ ] Add OpenMANET and Meshtastic visuals to `assets/interests/` and replace the on-page placeholders with final images.
+- [ ] Choose one project photo for each featured project from the local `photo-shortlist.html` review page.
+- [ ] Confirm publishing permission for any selected project photo that is not clearly Creative Commons licensed.
+
+- [ ] Add private-safe screenshots, demonstrations, or case studies for selected automations without exposing source code or repository locations.
+- [ ] Add screenshots or short demonstrations to the strongest automation entries.
+
+- [ ] Confirm the Track & Field coaching dates at St. Vincent de Paul Catholic School.
+- [ ] Add three approved coaching photos to `assets/coaching/` and replace the Interests-page placeholders.
+- [ ] Add verified coaching outcomes or athlete accomplishments when available.
 
 ## Backlog / Ideas
 
