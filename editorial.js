@@ -49,6 +49,38 @@ document.querySelectorAll('.nav-links a').forEach((link) => {
   if (link.getAttribute('href') === currentPath) link.setAttribute('aria-current', 'page');
 });
 
+document.querySelectorAll('[data-interest-tabs]').forEach((tabList) => {
+  const tabs = Array.from(tabList.querySelectorAll('[data-interest-tab]'));
+  const panels = Array.from(document.querySelectorAll('[data-interest-panel]'));
+
+  const activateInterest = (name, focusTab = false) => {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.interestTab === name;
+      tab.classList.toggle('is-active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && focusTab) tab.focus();
+    });
+    panels.forEach((panel) => {
+      panel.hidden = panel.dataset.interestPanel !== name;
+    });
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateInterest(tab.dataset.interestTab));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      let nextIndex = index;
+      if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+      if (event.key === 'Home') nextIndex = 0;
+      if (event.key === 'End') nextIndex = tabs.length - 1;
+      activateInterest(tabs[nextIndex].dataset.interestTab, true);
+    });
+  });
+});
+
 const addSwipeGesture = (element, onSwipe) => {
   let startX = null;
   let startY = null;
