@@ -18,7 +18,7 @@ This README is intentionally lightweight. Add project-specific run commands, sou
 
 ## Adding Technical-Interest Visuals
 
-The OpenMANET and Meshtastic cards in `index.html` include visual placeholders. Add your images to `assets/interests/` using these names, then replace the corresponding placeholder `<div>` with an `<img>` element as described in the HTML comment above each visual.
+The OpenMANET and Meshtastic cards in `interests.html` include visual placeholders. Add your images to `assets/interests/` using these names, then replace the corresponding placeholder `<div>` with an `<img>` element.
 
 - `assets/interests/openmanet-network.jpg` — a network layout, radio setup photo, or field deployment diagram.
 - `assets/interests/meshtastic-network.jpg` — a node layout, coverage map, deployment diagram, or field photo.
@@ -51,7 +51,7 @@ The OpenMANET and Meshtastic cards in `index.html` include visual placeholders. 
 Navigation is repeated across each page. Update the shared navigation block consistently when adding a new page.
 ## Resume
 
-`resume.html` previews `assets/resume/Jorge-Hinojosa-Resume.pdf`. Replace that PDF with the current resume using the same filename before publishing or sharing the site.
+`resume.html` previews the current public resume at `assets/resume/Jorge-Hinojosa-Resume.pdf`. Resume-backed website content was last synchronized on July 20, 2026. Follow [`RESUME-SYNC.md`](RESUME-SYNC.md) whenever a revised resume is provided so the PDF and the related website facts stay aligned.
 
 ## Contact Form
 
@@ -66,7 +66,7 @@ The featured projects link to reusable case-study pages:
 - case-study-vg-cp2.html
 - case-study-i35-georgetown.html
 
-Each case study deliberately keeps unfinished facts marked [REVIEW] until scope, role, dates, and results are confirmed.
+The case-study facts are grounded in the current resume. Project galleries remain ready for approved, private-safe photographs and diagrams.
 
 ## Unified Editorial System
 
