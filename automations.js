@@ -147,6 +147,29 @@ const impactDescriptions = {
 };
 
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character]));
+const automationIdFor = (index) => `automation-${index + 1}`;
+const featuredStories = [
+  {name:'DAR Field Reporting App',focus:'Field reporting',story:'Brings personnel, equipment, quantities, notes, review, and delivery into one mobile field workflow.'},
+  {name:'Turnover Automation',focus:'Field-to-office handoff',story:'Builds turnover fills and work-package layers, then connects survey points in one end-of-day run.'},
+  {name:'QA/QC Elevation Workbooks',focus:'Quality control',story:'Compares survey elevations with design requirements and produces structured workbooks for focused review.'},
+  {name:'ENTACT Civil 3D Assistant',focus:'Human-controlled AI',story:'Plans repeatable drafting actions locally, requires confirmation, and preserves an auditable execution record.'},
+  {name:'MasterFlow Cut / Fill Heat Map',focus:'Civil 3D production',story:'Turns several surface-import, volume, boundary, and styling steps into one controlled heat-map workflow.'},
+  {name:'Viewpoint–DAR Time Audit',focus:'Project controls',story:'Compares payroll timesheets with daily-report hours and produces an exception-focused workbook.'}
+];
+const featuredGrid = document.querySelector('[data-featured-automations]');
+if (featuredGrid) {
+  featuredGrid.innerHTML = featuredStories.map((featured, rank) => {
+    const index = automations.findIndex((automation) => automation.name === featured.name);
+    if (index < 0) return '';
+    const automation = automations[index];
+    const impact = impactFor(automation);
+    return `<article class="automation-featured-card">
+      <div class="featured-automation-top"><span>${String(rank + 1).padStart(2, '0')}</span><p>${escapeHtml(featured.focus)}</p></div>
+      <h3>${escapeHtml(automation.name)}</h3><p>${escapeHtml(featured.story)}</p>
+      <div class="featured-automation-footer"><span>Impact ${impact}/5</span><a href="#${automationIdFor(index)}">Find in catalog ↓</a></div>
+    </article>`;
+  }).join('');
+}
 const grid = document.querySelector('[data-automation-grid]');
 if (grid) {
   grid.innerHTML = automations.map((automation, index) => {
@@ -157,7 +180,7 @@ if (grid) {
     const impact = impactFor(automation);
     const impactBars = Array.from({length:5}, (_, index) => `<i class="${index < impact ? 'is-filled' : ''}"></i>`).join('');
     const impactBadge = `<span class="impact-indicator impact-${impact}" title="${escapeHtml(impactDescriptions[impact])}" aria-label="Impact ${impact} out of 5"><span>Impact</span><span class="impact-meter" aria-hidden="true">${impactBars}</span><b>${impact}/5</b></span>`;
-    return `<article class="automation-card" data-automation data-category="${automation.categories.join(' ')}" data-search="${escapeHtml(search)}">
+    return `<article class="automation-card" id="${automationIdFor(index)}" data-automation data-category="${automation.categories.join(' ')}" data-search="${escapeHtml(search)}">
       <div class="automation-visual"><span class="automation-code">JH / ${number}</span><strong>${escapeHtml(automation.code)}</strong><i></i></div>
       <div class="automation-content"><div class="automation-heading"><p class="automation-category">${escapeHtml(automation.label)}</p><div class="automation-signals">${impactBadge}${status}</div></div><h2>${escapeHtml(automation.name)}</h2><p>${escapeHtml(automation.summary)}</p><div class="automation-footer"><span>${escapeHtml(automation.meta)}</span>${action}</div></div>
     </article>`;

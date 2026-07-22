@@ -1,0 +1,53 @@
+name: Sync resume PDF
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-resume-pdf
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out portfolio
+        uses: actions/checkout@v4
+
+      - name: Download current resume
+        shell: bash
+        run: |
+          set -euo pipefail
+          destination="assets/resume/Jorge-Hinojosa-Resume.pdf"
+          temporary_file="${RUNNER_TEMP}/Jorge-Hinojosa-Resume.pdf"
+
+          curl --fail --location --silent --show-error \
+            --retry 3 \
+            "https://raw.githubusercontent.com/jhinojosa1/resume/main/main.pdf" \
+            --output "${temporary_file}"
+
+          test "$(head -c 5 "${temporary_file}")" = "%PDF-"
+          test "$(stat -c%s "${temporary_file}")" -gt 10000
+          install -m 0644 "${temporary_file}" "${destination}"
+
+      - name: Commit updated resume
+        shell: bash
+        run: |
+          set -euo pipefail
+          destination="assets/resume/Jorge-Hinojosa-Resume.pdf"
+
+          if git diff --quiet -- "${destination}"; then
+            echo "Portfolio already has the current resume."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "${destination}"
+          git commit -m "Sync resume PDF"
+          git push

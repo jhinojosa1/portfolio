@@ -140,31 +140,6 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   revealItems.forEach((item) => observer.observe(item));
 }
 
-document.querySelectorAll('[data-project-carousel]').forEach((carousel) => {
-  const slides = Array.from(carousel.querySelectorAll('[data-project-slide]'));
-  const currentLabel = carousel.querySelector('[data-current-slide]');
-  let current = 0;
-
-  const show = (next) => {
-    current = (next + slides.length) % slides.length;
-    slides.forEach((slide, index) => {
-      const active = index === current;
-      slide.classList.toggle('is-active', active);
-      slide.setAttribute('aria-hidden', String(!active));
-    });
-    if (currentLabel) currentLabel.textContent = String(current + 1).padStart(2, '0');
-  };
-
-  carousel.querySelector('[data-project-prev]')?.addEventListener('click', () => show(current - 1));
-  carousel.querySelector('[data-project-next]')?.addEventListener('click', () => show(current + 1));
-  carousel.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') show(current - 1);
-    if (event.key === 'ArrowRight') show(current + 1);
-  });
-  addSwipeGesture(carousel, (direction) => show(current + direction));
-  show(0);
-});
-
 document.querySelectorAll('[data-athlete-carousel]').forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll('.athlete-slide'));
   const dots = Array.from(carousel.querySelectorAll('[data-athlete-dot]'));
@@ -195,7 +170,7 @@ document.querySelectorAll('[data-email-form]').forEach((form) => {
     const data = new FormData(form);
     const subject = encodeURIComponent(data.get('subject') || 'Portfolio inquiry');
     const body = encodeURIComponent('Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\n\n' + data.get('message'));
-    window.location.href = 'mailto:hinojosasb72@gmail.com?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:jhinojosa0@tutamail.com?subject=' + subject + '&body=' + body;
   });
 });
 document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
@@ -237,3 +212,19 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   filters.forEach((filter, index) => filter.setAttribute('aria-pressed', String(index === 0)));
   updateAutomations();
 });
+
+if (!document.querySelector('.site-footer')) {
+  const onContactPage = window.location.pathname.toLowerCase().endsWith('/contact.html');
+  const onHomePage = window.location.pathname.toLowerCase().endsWith('/index.html') || window.location.pathname === '/';
+  const onEducationPage = window.location.pathname.toLowerCase().endsWith('/education.html');
+  const onResumePage = window.location.pathname.toLowerCase().endsWith('/resume.html');
+  const footerAction = onContactPage
+    ? '<a class="site-footer-button" href="mailto:jhinojosa0@tutamail.com">Email me directly ↗</a>'
+    : '<a class="site-footer-button" href="contact.html">Start a conversation ↗</a>';
+  if (!onResumePage) document.body.insertAdjacentHTML('beforeend', `<footer class="site-footer">
+    <div class="editorial-shell">
+      ${onHomePage || onEducationPage || onResumePage ? '' : `<div class="site-footer-cta"><p class="section-index">Work together</p><h2>Engineering that works in the field—and holds up in the details.</h2>${footerAction}</div>`}
+      <div class="site-footer-meta"><p>Jorge Hinojosa · Mechanical Engineer · Houston, Texas</p><nav aria-label="Footer navigation"><a href="mailto:jhinojosa0@tutamail.com">Email</a><a href="resume.html">Résumé</a><a href="projects.html">Projects</a><a href="https://github.com/jhinojosa1" target="_blank" rel="noopener">GitHub ↗</a></nav></div>
+    </div>
+  </footer>`);
+}
