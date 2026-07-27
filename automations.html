@@ -4,7 +4,7 @@
 <title>Automations | Jorge Hinojosa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="editorial.css?v=20260721-compact-automations" /><link rel="stylesheet" href="simple.css?v=20260727-pagination" /><script src="automations.js?v=20260727-filter-media" defer></script><script src="editorial.js?v=20260727-pagination-24" defer></script></head><body>
+<link rel="stylesheet" href="editorial.css?v=20260721-compact-automations" /><link rel="stylesheet" href="simple.css?v=20260727-impact-guide" /><script src="automations.js?v=20260727-filter-media" defer></script><script src="editorial.js?v=20260727-impact-guide" defer></script></head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <nav class="site-nav" aria-label="Primary navigation"><div class="nav-shell"><a class="brand" href="index.html" aria-label="Jorge Hinojosa home">JH</a><div class="nav-links"><a href="projects.html">Projects</a><a href="automations.html">Automations</a><a href="timeline.html">Timeline</a><a href="interests.html">Interests</a><a href="education.html">Education</a><a href="resume.html">Resume</a><a class="nav-contact" href="contact.html">Contact</a></div></div></nav>
 <main class="page-content automation-catalog-page" id="main-content"><div class="editorial-shell">
@@ -21,10 +21,24 @@
 <button class="catalog-filter" type="button" data-automation-filter="apps">Apps &amp; Platforms</button>
 <button class="catalog-filter" type="button" data-automation-filter="ai">AI</button>
 <button class="catalog-filter" type="button" data-automation-filter="utility">Utilities</button>
+<button class="impact-guide-trigger" type="button" data-impact-guide-open aria-haspopup="dialog">Impact guide <span aria-hidden="true">?</span></button>
 </div>
 <div class="catalog-count" aria-live="polite"><strong data-automation-count>0</strong><span>automations</span></div>
 </section>
-<div class="impact-key" aria-label="Impact scale guide"><span><strong>1</strong> Targeted utility</span><span><strong>2</strong> Focused improvement</span><span><strong>3</strong> Recurring workflow</span><span><strong>4</strong> Multi-step operation</span><span><strong>5</strong> Team-scale impact</span></div>
+<dialog class="impact-guide-dialog" data-impact-guide-dialog aria-labelledby="impact-guide-title">
+<div class="impact-guide-panel">
+<header><div><p>Impact bar</p><h2 id="impact-guide-title">How the score works</h2></div><button type="button" data-impact-guide-close aria-label="Close impact guide">×</button></header>
+<p class="impact-guide-intro">The bar estimates how broadly an automation improves the work—from one targeted task to a team-critical operating system. It measures practical reach, not code quality.</p>
+<ol class="impact-guide-list">
+<li><span class="impact-guide-score"><b>1/5</b><span class="impact-guide-meter" aria-hidden="true"><i class="is-filled"></i><i></i><i></i><i></i><i></i></span></span><div><strong>Targeted utility</strong><p>Solves one focused task for an individual user.</p></div></li>
+<li><span class="impact-guide-score"><b>2/5</b><span class="impact-guide-meter" aria-hidden="true"><i class="is-filled"></i><i class="is-filled"></i><i></i><i></i><i></i></span></span><div><strong>Focused improvement</strong><p>Saves meaningful time within a defined process.</p></div></li>
+<li><span class="impact-guide-score"><b>3/5</b><span class="impact-guide-meter" aria-hidden="true"><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i></i><i></i></span></span><div><strong>Recurring workflow</strong><p>Improves work that teams repeat regularly.</p></div></li>
+<li><span class="impact-guide-score"><b>4/5</b><span class="impact-guide-meter" aria-hidden="true"><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i></i></span></span><div><strong>Multi-step operation</strong><p>Connects several tasks, systems, or handoffs.</p></div></li>
+<li><span class="impact-guide-score"><b>5/5</b><span class="impact-guide-meter" aria-hidden="true"><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i><i class="is-filled"></i></span></span><div><strong>Team-scale impact</strong><p>Supports business-critical work across a team.</p></div></li>
+</ol>
+<form method="dialog"><button type="submit">Got it</button></form>
+</div>
+</dialog>
 <section class="automation-grid" data-automation-grid aria-label="Automations"></section>
 <p class="catalog-empty" data-automation-empty hidden>No automations match that search.</p>
 <nav class="catalog-pagination" data-automation-pagination aria-label="Automation catalog pages">

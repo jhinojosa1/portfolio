@@ -245,3 +245,14 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   filters.forEach((filter, index) => filter.setAttribute('aria-pressed', String(index === 0)));
   updateAutomations();
 });
+const impactGuideDialog = document.querySelector('[data-impact-guide-dialog]');
+const impactGuideOpener = document.querySelector('[data-impact-guide-open]');
+const impactGuideCloser = document.querySelector('[data-impact-guide-close]');
+if (impactGuideDialog && impactGuideOpener) {
+  impactGuideOpener.addEventListener('click', () => {
+    if (typeof impactGuideDialog.showModal === 'function') impactGuideDialog.showModal();
+    else impactGuideDialog.setAttribute('open', '');
+  });
+  impactGuideCloser?.addEventListener('click', () => impactGuideDialog.close());
+  impactGuideDialog.addEventListener('close', () => impactGuideOpener.focus());
+}
