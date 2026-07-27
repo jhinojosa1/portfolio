@@ -179,15 +179,21 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   const filters = Array.from(document.querySelectorAll('[data-automation-filter]'));
   const count = document.querySelector('[data-automation-count]');
   const empty = document.querySelector('[data-automation-empty]');
+  const originalOrder = [...automations];
   let activeCategory = 'all';
 
   const updateAutomations = () => {
     const query = (search?.value || '').trim().toLowerCase();
     let visible = 0;
+    const orderedAutomations = activeCategory === 'big-hitters'
+      ? automations.filter((automation) => automation.dataset.bigHitterRank).sort((a, b) => Number(a.dataset.bigHitterRank) - Number(b.dataset.bigHitterRank))
+      : originalOrder;
+    orderedAutomations.forEach((automation) => grid.appendChild(automation));
+    grid.classList.toggle('is-big-hitters', activeCategory === 'big-hitters');
     automations.forEach((automation) => {
       const categories = (automation.dataset.category || '').split(' ');
       const searchText = (automation.dataset.search || '') + ' ' + automation.textContent.toLowerCase();
-      const categoryMatch = activeCategory === 'all' || categories.includes(activeCategory);
+      const categoryMatch = activeCategory === 'all' || (activeCategory === 'big-hitters' ? Boolean(automation.dataset.bigHitterRank) : categories.includes(activeCategory));
       const searchMatch = !query || searchText.includes(query);
       const show = categoryMatch && searchMatch;
       automation.hidden = !show;
@@ -214,17 +220,10 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
 });
 
 if (!document.querySelector('.site-footer')) {
-  const onContactPage = window.location.pathname.toLowerCase().endsWith('/contact.html');
-  const onHomePage = window.location.pathname.toLowerCase().endsWith('/index.html') || window.location.pathname === '/';
-  const onEducationPage = window.location.pathname.toLowerCase().endsWith('/education.html');
   const onResumePage = window.location.pathname.toLowerCase().endsWith('/resume.html');
-  const footerAction = onContactPage
-    ? '<a class="site-footer-button" href="mailto:jhinojosa0@tutamail.com">Email me directly ↗</a>'
-    : '<a class="site-footer-button" href="contact.html">Start a conversation ↗</a>';
   if (!onResumePage) document.body.insertAdjacentHTML('beforeend', `<footer class="site-footer">
     <div class="editorial-shell">
-      ${onHomePage || onEducationPage || onResumePage ? '' : `<div class="site-footer-cta"><p class="section-index">Work together</p><h2>Engineering that works in the field—and holds up in the details.</h2>${footerAction}</div>`}
-      <div class="site-footer-meta"><p>Jorge Hinojosa · Mechanical Engineer · Houston, Texas</p><nav aria-label="Footer navigation"><a href="mailto:jhinojosa0@tutamail.com">Email</a><a href="resume.html">Résumé</a><a href="projects.html">Projects</a><a href="https://github.com/jhinojosa1" target="_blank" rel="noopener">GitHub ↗</a></nav></div>
+      <div class="site-footer-meta"><div class="site-footer-identity"><p>Jorge Hinojosa · Mechanical Engineer · Houston, Texas</p><p class="site-footer-credit">Built and designed by Jorge Hinojosa.</p></div><nav aria-label="Footer navigation"><a href="mailto:jhinojosa0@tutamail.com">Email</a><a href="resume.html">Résumé</a><a href="projects.html">Projects</a><a href="https://github.com/jhinojosa1" target="_blank" rel="noopener">GitHub ↗</a></nav></div>
     </div>
   </footer>`);
 }
