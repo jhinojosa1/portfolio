@@ -25,8 +25,9 @@ Purpose: Portfolio project.
 - [x] Choose one project photo for each featured project from the local `photo-shortlist.html` review page.
 - [ ] Confirm publishing permission for any selected project photo that is not clearly Creative Commons licensed.
 
-- [ ] Add private-safe screenshots, demonstrations, or case studies for selected automations without exposing source code or repository locations.
-- [ ] Add screenshots or short demonstrations to the strongest automation entries.
+- [x] Add approved, private-safe DAR app screens plus representative sample-data screenshots for the MasterFlow Cut / Fill Heat Map and Viewpoint–DAR Time Audit.
+- [x] Document MasterFlow's two-surface comparison, automatic display logic, plot-ready outputs, and 1.5-hour to 3.5-minute cycle-time reduction.
+- [ ] Add approved screenshots or short demonstrations to the next strongest automation entries: Turnover Automation, QA/QC Elevation Workbooks, and ENTACT Civil 3D Assistant.
 - [x] Curate the Automations page with an employer-facing introduction and six selected systems before the full catalog.
 - [x] Finish the one-by-one automation catalog rewrite in `automations.js` (plain language: problem → what it automates → why it matters; explain treatment grids as map areas showing treated ground volume).
 - [ ] Revisit deferred automations once their real purpose is confirmed:
