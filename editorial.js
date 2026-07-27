@@ -179,33 +179,58 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   const filters = Array.from(document.querySelectorAll('[data-automation-filter]'));
   const count = document.querySelector('[data-automation-count]');
   const empty = document.querySelector('[data-automation-empty]');
+  const pagination = document.querySelector('[data-automation-pagination]');
+  const previousPage = document.querySelector('[data-automation-previous]');
+  const nextPage = document.querySelector('[data-automation-next]');
+  const pageStatus = document.querySelector('[data-automation-page-status]');
   const originalOrder = [...automations];
+  const pageSize = 24;
   let activeCategory = 'all';
+  let currentPage = 1;
 
   const updateAutomations = () => {
     const query = (search?.value || '').trim().toLowerCase();
-    let visible = 0;
     const orderedAutomations = activeCategory === 'big-hitters'
       ? automations.filter((automation) => automation.dataset.bigHitterRank).sort((a, b) => Number(a.dataset.bigHitterRank) - Number(b.dataset.bigHitterRank))
       : originalOrder;
     orderedAutomations.forEach((automation) => grid.appendChild(automation));
     grid.classList.toggle('is-big-hitters', activeCategory === 'big-hitters');
-    automations.forEach((automation) => {
+    const matches = orderedAutomations.filter((automation) => {
       const categories = (automation.dataset.category || '').split(' ');
       const searchText = (automation.dataset.search || '') + ' ' + automation.textContent.toLowerCase();
       const categoryMatch = activeCategory === 'all' || (activeCategory === 'big-hitters' ? Boolean(automation.dataset.bigHitterRank) : categories.includes(activeCategory));
       const searchMatch = !query || searchText.includes(query);
-      const show = categoryMatch && searchMatch;
-      automation.hidden = !show;
-      if (show) visible += 1;
+      return categoryMatch && searchMatch;
     });
-    if (count) count.textContent = String(visible);
-    if (empty) empty.hidden = visible !== 0;
+    const pageCount = Math.max(1, Math.ceil(matches.length / pageSize));
+    currentPage = Math.min(currentPage, pageCount);
+    const pageStart = (currentPage - 1) * pageSize;
+    const pageItems = new Set(matches.slice(pageStart, pageStart + pageSize));
+    automations.forEach((automation) => { automation.hidden = !pageItems.has(automation); });
+    if (count) count.textContent = String(matches.length);
+    if (empty) empty.hidden = matches.length !== 0;
+    if (pagination) pagination.hidden = matches.length === 0;
+    if (previousPage) previousPage.disabled = currentPage === 1;
+    if (nextPage) nextPage.disabled = currentPage === pageCount;
+    if (pageStatus) {
+      const first = matches.length ? pageStart + 1 : 0;
+      const last = Math.min(pageStart + pageSize, matches.length);
+      pageStatus.textContent = `Page ${currentPage} of ${pageCount} · Showing ${first}–${last} of ${matches.length}`;
+    }
+  };
+
+  const showPage = (page) => {
+    currentPage = page;
+    updateAutomations();
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const top = grid.getBoundingClientRect().top + window.scrollY - 110;
+    window.scrollTo({top: Math.max(0, top), behavior: reducedMotion ? 'auto' : 'smooth'});
   };
 
   filters.forEach((filter) => {
     filter.addEventListener('click', () => {
       activeCategory = filter.dataset.automationFilter || 'all';
+      currentPage = 1;
       filters.forEach((button) => {
         const active = button === filter;
         button.classList.toggle('is-active', active);
@@ -214,16 +239,9 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
       updateAutomations();
     });
   });
-  search?.addEventListener('input', updateAutomations);
+  search?.addEventListener('input', () => { currentPage = 1; updateAutomations(); });
+  previousPage?.addEventListener('click', () => showPage(Math.max(1, currentPage - 1)));
+  nextPage?.addEventListener('click', () => showPage(currentPage + 1));
   filters.forEach((filter, index) => filter.setAttribute('aria-pressed', String(index === 0)));
   updateAutomations();
 });
-
-if (!document.querySelector('.site-footer')) {
-  const onResumePage = window.location.pathname.toLowerCase().endsWith('/resume.html');
-  if (!onResumePage) document.body.insertAdjacentHTML('beforeend', `<footer class="site-footer">
-    <div class="editorial-shell">
-      <div class="site-footer-meta"><div class="site-footer-identity"><p>Jorge Hinojosa · Mechanical Engineer · Houston, Texas</p><p class="site-footer-credit">Built and designed by Jorge Hinojosa.</p></div><nav aria-label="Footer navigation"><a href="mailto:jhinojosa0@tutamail.com">Email</a><a href="resume.html">Résumé</a><a href="projects.html">Projects</a><a href="https://github.com/jhinojosa1" target="_blank" rel="noopener">GitHub ↗</a></nav></div>
-    </div>
-  </footer>`);
-}

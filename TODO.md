@@ -89,3 +89,15 @@ Purpose: Portfolio project.
 - [x] Remove the case-study links and numbered photo badges from all three Projects cards.
 - [x] Remove the large shared Work Together callout and retain the compact footer.
 - [x] Capitalize the homepage introduction's key professional phrases.
+- [x] Ensure automation-card photos remain visible in All and filtered catalog views.
+- [x] Replace the private-coaching timeline accordions with a visual achievement board.
+- [x] Move the coaching photos near the Interests introduction and convert them to a rotating gallery.
+- [x] Version the shared editorial script across every public page so removed footer content cannot remain cached.
+- [x] Paginate the automation catalog at 24 matching cards per page with Previous and Next controls.
+- [x] Expand every applicable career-timeline card with clear, quantified facts from the current résumé.
+- [x] Replace the private-coaching callout with a contact form preset to the T&F Private Coaching subject.
+- [x] Replace the static coaching-results grid with a rotating visual achievement gallery.
+- [x] Add a real Houston street-map backdrop to the community resilience mesh visual with source attribution.
+- [x] Redraw the haul-route fleet icons as articulated heavy-equipment dump-truck silhouettes.
+- [x] Redesign the HaLow field network as sequential long-distance Raspberry Pi 4 relays with mesh failover links.
+- [x] Refine the homepage introduction around Mechanical Engineering education and Civil Field Engineering trade experience.
