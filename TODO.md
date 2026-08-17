@@ -4,6 +4,8 @@ Purpose: Portfolio project.
 
 ## Active TODOs
 
+- [x] Add a Books reading-tracker tab with the first completed title and original companion artwork.
+
 - [x] Complete the three featured case studies with resume-verified role, dates, scope, and results.
 - [ ] Review the resume-derived project wording and add approved, private-safe project photographs or diagrams.
 

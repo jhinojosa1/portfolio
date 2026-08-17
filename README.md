@@ -22,6 +22,10 @@ The OpenMANET and Meshtastic cards in `interests.html` include visual placeholde
 
 - `assets/interests/openmanet-network.jpg` — a network layout, radio setup photo, or field deployment diagram.
 - `assets/interests/meshtastic-network.jpg` — a node layout, coverage map, deployment diagram, or field photo.
+
+## Reading Tracker
+
+`books.html` is a dedicated reading-tracker page linked from the primary navigation. Its first card is *Handling Difficult People* by Dr. John Townsend and uses original companion artwork at `assets/books/handling-difficult-people-art.png` rather than reproducing a publisher cover.
 ## Operating Docs
 
 - [`TODO.md`](TODO.md) — active/pending work list.
@@ -46,6 +50,7 @@ The OpenMANET and Meshtastic cards in `interests.html` include visual placeholde
 - `projects.html` — selected project collection.
 - `timeline.html` — career and project timeline.
 - `interests.html` — working approach and technical interests.
+- `books.html` — dedicated reading tracker.
 - `contact.html` — contact information.
 
 Navigation is repeated across each page. Update the shared navigation block consistently when adding a new page.
