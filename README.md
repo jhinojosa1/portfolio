@@ -56,28 +56,30 @@ Navigation is repeated across each page. Update the shared navigation block cons
 ## Contact Form
 
 The contact form composes a pre-addressed email in the visitor's default email application. It does not submit or store information on a server.
-## Editorial Homepage
+## Minimal Design
 
-The home page is intentionally a focused landing page rather than a one-page portfolio. Featured field projects live on the Projects page, while the complete automation collection lives on its own Automations page. Career history, interests, education, resume, and contact content each live on their own page. The editorial CSS and JavaScript files provide the shared presentation and accessible gallery behavior.
+The site uses a shared warm-white, charcoal, and muted-green design with system body fonts, serif headings, compact navigation, and responsive layouts. The home page introduces Jorge and links directly to three selected projects. Projects are displayed together instead of in a carousel. Experience, Education, and Interests share an About navigation.
 
-The featured projects link to reusable case-study pages:
+The public pages use `editorial.css` and `editorial.js`. Navigation and footer HTML are repeated across the pages; update them consistently. No package installation or build step is required.
 
-- case-study-clifty-creek.html
-- case-study-vg-cp2.html
-- case-study-i35-georgetown.html
+### Local review
 
-The case-study facts are grounded in the current resume. Project galleries remain ready for approved, private-safe photographs and diagrams.
+```sh
+cd ~/Projects/portfolio
+git switch redesign/minimal-professional
+python -m http.server 4173 --bind 127.0.0.1
+```
 
-## Unified Editorial System
+Open http://localhost:4173/. This preview serves the checked-out branch. GitHub Pages continues to publish `main`; pushing a redesign branch does not change the live website. Review and approve the redesign before merging.
 
-The public pages now share the same editorial design language through the shared editorial stylesheet and interaction file: large mission-led headers, numbered hierarchy, dark/light contrast, square-edged content sections, responsive layouts, restrained motion, and consistent navigation.
+### Verification
 
-The shared system covers the home page, Projects, Timeline, Interests, Education, Resume, Contact, and all featured-project case studies.
+Check all eleven public pages at desktop, tablet, and phone widths. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. The contact form opens a composed email in the visitor's email application.
 
 ## Automation Catalog
 
-The Automations page renders a deduplicated 86-entry catalog from `automations.js`. Numbering and counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Every card includes a visual impact score from 1 to 5, ranging from a targeted utility to team-scale impact. Development entries remain visible and carry a separate status badge.
+The Automations page renders a deduplicated 85-entry catalog from `automations.js`. Numbering and counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Entries expand to show their full description and an impact score from 1 to 5, ranging from a targeted utility to team-scale impact. Development entries remain visible and carry a separate status badge.
 
 ## Coaching
 
-The Timeline and Interests pages include Jorge's Track & Field coaching experience with kindergarten through eighth-grade students at St. Vincent de Paul Catholic School. Coaching dates and verified outcomes remain marked `[REVIEW]`. Add approved images to `assets/coaching/`; the Interests page provides three gallery positions and a private-coaching email call-to-action.
+The Timeline and Interests pages include Jorge's Track & Field coaching experience with kindergarten through eighth-grade students at St. Vincent de Paul Catholic School. Coaching dates and additional verified outcomes are still pending in `TODO.md`. Add approved images to `assets/coaching/`; the Interests page includes a private-coaching email call-to-action. Unfinished photo placeholders and editorial review instructions are omitted from the public design.

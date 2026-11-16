@@ -149,17 +149,13 @@ const impactDescriptions = {
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character]));
 const grid = document.querySelector('[data-automation-grid]');
 if (grid) {
-  grid.innerHTML = automations.map((automation, index) => {
-    const number = String(index + 1).padStart(2, '0');
+  grid.innerHTML = automations.map((automation) => {
     const search = [automation.name, automation.label, automation.summary, automation.meta, ...automation.categories].join(' ').toLowerCase();
-    const action = '<span class="automation-private">Private automation</span>';
     const status = automation.status ? `<span class="automation-status">${escapeHtml(automation.status)}</span>` : '';
     const impact = impactFor(automation);
-    const impactBars = Array.from({length:5}, (_, index) => `<i class="${index < impact ? 'is-filled' : ''}"></i>`).join('');
-    const impactBadge = `<span class="impact-indicator impact-${impact}" title="${escapeHtml(impactDescriptions[impact])}" aria-label="Impact ${impact} out of 5"><span>Impact</span><span class="impact-meter" aria-hidden="true">${impactBars}</span><b>${impact}/5</b></span>`;
     return `<article class="automation-card" data-automation data-category="${automation.categories.join(' ')}" data-search="${escapeHtml(search)}">
-      <div class="automation-visual"><span class="automation-code">JH / ${number}</span><strong>${escapeHtml(automation.code)}</strong><i></i></div>
-      <div class="automation-content"><div class="automation-heading"><p class="automation-category">${escapeHtml(automation.label)}</p><div class="automation-signals">${impactBadge}${status}</div></div><h2>${escapeHtml(automation.name)}</h2><p>${escapeHtml(automation.summary)}</p><div class="automation-footer"><span>${escapeHtml(automation.meta)}</span>${action}</div></div>
+      <details><summary><span class="automation-category">${escapeHtml(automation.label)}</span><h2>${escapeHtml(automation.name)}</h2><span class="automation-meta">${escapeHtml(automation.meta)}</span></summary>
+      <div class="automation-description"><p>${escapeHtml(automation.summary)}</p><div class="automation-heading"><span class="impact-indicator" title="${escapeHtml(impactDescriptions[impact])}">Impact ${impact}/5</span>${status}<span class="automation-private">Private automation</span></div></div></details>
     </article>`;
   }).join('');
 }

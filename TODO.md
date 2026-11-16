@@ -2,6 +2,13 @@
 
 Purpose: Portfolio project.
 
+## Redesign review
+
+- [x] Implement a professional, minimal design across all public pages on `redesign/minimal-professional`.
+- [x] Simplify navigation, show projects without a carousel, and make automation entries expandable.
+- [x] Remove unfinished photo placeholders and internal review instructions from public pages.
+- [ ] Obtain Jorge’s design approval before merging to `main`.
+
 ## Active TODOs
 
 - [x] Complete the three featured case studies with resume-verified role, dates, scope, and results.

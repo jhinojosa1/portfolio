@@ -32,8 +32,10 @@ document.querySelectorAll('.site-nav').forEach((nav, navIndex) => {
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-      setMenuOpen(false);
-      toggle.focus();
+      if (nav.classList.contains('is-menu-open')) {
+        setMenuOpen(false);
+        toggle.focus();
+      }
     }
   });
 
@@ -44,9 +46,9 @@ document.querySelectorAll('.site-nav').forEach((nav, navIndex) => {
   else mobileNavQuery.addListener(closeDesktopMenu);
 });
 
-document.querySelectorAll('.nav-links a').forEach((link) => {
+document.querySelectorAll('.nav-links a, .about-nav a').forEach((link) => {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  if (link.getAttribute('href') === currentPath) link.setAttribute('aria-current', 'page');
+  if (link.getAttribute('href') === currentPath || (link.hasAttribute('data-about-link') && ['education.html', 'interests.html'].includes(currentPath))) link.setAttribute('aria-current', 'page');
 });
 
 document.querySelectorAll('[data-interest-tabs]').forEach((tabList) => {
@@ -124,47 +126,6 @@ const addSwipeGesture = (element, onSwipe) => {
     element.addEventListener('touchcancel', cancel, { passive: true });
   }
 };
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealItems = document.querySelectorAll('.reveal');
-
-if (reduceMotion || !('IntersectionObserver' in window)) {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
-} else {
-  const observer = new IntersectionObserver((entries, revealObserver) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.12 });
-  revealItems.forEach((item) => observer.observe(item));
-}
-
-document.querySelectorAll('[data-project-carousel]').forEach((carousel) => {
-  const slides = Array.from(carousel.querySelectorAll('[data-project-slide]'));
-  const currentLabel = carousel.querySelector('[data-current-slide]');
-  let current = 0;
-
-  const show = (next) => {
-    current = (next + slides.length) % slides.length;
-    slides.forEach((slide, index) => {
-      const active = index === current;
-      slide.classList.toggle('is-active', active);
-      slide.setAttribute('aria-hidden', String(!active));
-    });
-    if (currentLabel) currentLabel.textContent = String(current + 1).padStart(2, '0');
-  };
-
-  carousel.querySelector('[data-project-prev]')?.addEventListener('click', () => show(current - 1));
-  carousel.querySelector('[data-project-next]')?.addEventListener('click', () => show(current + 1));
-  carousel.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') show(current - 1);
-    if (event.key === 'ArrowRight') show(current + 1);
-  });
-  addSwipeGesture(carousel, (direction) => show(current + direction));
-  show(0);
-});
-
 document.querySelectorAll('[data-athlete-carousel]').forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll('.athlete-slide'));
   const dots = Array.from(carousel.querySelectorAll('[data-athlete-dot]'));
