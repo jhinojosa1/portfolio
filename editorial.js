@@ -165,7 +165,8 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   const filters = Array.from(document.querySelectorAll('[data-automation-filter]'));
   const count = document.querySelector('[data-automation-count]');
   const empty = document.querySelector('[data-automation-empty]');
-  let activeCategory = 'all';
+  const requestedCategory = new URLSearchParams(window.location.search).get('category');
+  let activeCategory = filters.some(button => button.dataset.automationFilter === requestedCategory) ? requestedCategory : 'all';
 
   const updateAutomations = () => {
     const query = (search?.value || '').trim().toLowerCase();
@@ -195,6 +196,10 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
     });
   });
   search?.addEventListener('input', updateAutomations);
-  filters.forEach((filter, index) => filter.setAttribute('aria-pressed', String(index === 0)));
+  filters.forEach((filter) => {
+    const active = filter.dataset.automationFilter === activeCategory;
+    filter.classList.toggle('is-active', active);
+    filter.setAttribute('aria-pressed', String(active));
+  });
   updateAutomations();
 });

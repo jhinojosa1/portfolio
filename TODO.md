@@ -7,6 +7,7 @@ Purpose: Portfolio project.
 - [x] Implement a professional, minimal design across all public pages on `redesign/minimal-professional`.
 - [x] Simplify navigation, show projects without a carousel, and make automation entries expandable.
 - [x] Remove unfinished photo placeholders and internal review instructions from public pages.
+- [x] Revise the initial design following feedback: reduce empty space, replace the serif headings and slogans, and show project photographs on the home page.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs

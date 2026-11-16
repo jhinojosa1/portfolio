@@ -42,7 +42,7 @@ The OpenMANET and Meshtastic cards in `interests.html` include visual placeholde
 `photo-shortlist.html` and `assets/featured/candidates/` are local review materials excluded by `.gitignore`. They contain three candidate images for each featured project. Confirm usage permission before moving a non-Creative-Commons candidate into the public site.
 ## Site Pages
 
-- `index.html` — home page and featured-work carousel.
+- `index.html` — home page with a compact profile, three project photographs, and automation category links.
 - `projects.html` — selected project collection.
 - `timeline.html` — career and project timeline.
 - `interests.html` — working approach and technical interests.
@@ -58,7 +58,7 @@ Navigation is repeated across each page. Update the shared navigation block cons
 The contact form composes a pre-addressed email in the visitor's default email application. It does not submit or store information on a server.
 ## Minimal Design
 
-The site uses a shared warm-white, charcoal, and muted-green design with system body fonts, serif headings, compact navigation, and responsive layouts. The home page introduces Jorge and links directly to three selected projects. Projects are displayed together instead of in a carousel. Experience, Education, and Interests share an About navigation.
+The site uses white, charcoal, and blue with system sans-serif typography and compact spacing. The home page shows a factual profile, three selected projects with photographs, and links that open specific automation categories. Projects are displayed in a three-column grid on desktop and stacked on phones. Experience, Education, and Interests share an About navigation.
 
 The public pages use `editorial.css` and `editorial.js`. Navigation and footer HTML are repeated across the pages; update them consistently. No package installation or build step is required.
 
@@ -78,7 +78,7 @@ Check all eleven public pages at desktop, tablet, and phone widths. Verify mobil
 
 ## Automation Catalog
 
-The Automations page renders a deduplicated 85-entry catalog from `automations.js`. Numbering and counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Entries expand to show their full description and an impact score from 1 to 5, ranging from a targeted utility to team-scale impact. Development entries remain visible and carry a separate status badge.
+The Automations page renders a deduplicated 85-entry catalog from `automations.js`. Counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Entries expand to show their full description and an impact score from 1 to 5, ranging from a targeted utility to team-scale impact. Development entries remain visible and carry a separate status badge.
 
 ## Coaching
 
