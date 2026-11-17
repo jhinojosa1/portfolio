@@ -8,6 +8,7 @@ Purpose: Portfolio project.
 - [x] Simplify navigation, show projects without a carousel, and make automation entries expandable.
 - [x] Remove unfinished photo placeholders and internal review instructions from public pages.
 - [x] Revise the initial design following feedback: reduce empty space, replace the serif headings and slogans, and show project photographs on the home page.
+- [x] Apply Jorge’s selected SOM reference: architecture-led photography, monochrome presentation, locally hosted typography, and aligned project captions.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs

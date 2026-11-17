@@ -42,7 +42,7 @@ The OpenMANET and Meshtastic cards in `interests.html` include visual placeholde
 `photo-shortlist.html` and `assets/featured/candidates/` are local review materials excluded by `.gitignore`. They contain three candidate images for each featured project. Confirm usage permission before moving a non-Creative-Commons candidate into the public site.
 ## Site Pages
 
-- `index.html` — home page with a compact profile, three project photographs, and automation category links.
+- `index.html` — home page with a featured project, two supporting project photographs, background, and automation category links.
 - `projects.html` — selected project collection.
 - `timeline.html` — career and project timeline.
 - `interests.html` — working approach and technical interests.
@@ -56,9 +56,11 @@ Navigation is repeated across each page. Update the shared navigation block cons
 ## Contact Form
 
 The contact form composes a pre-addressed email in the visitor's default email application. It does not submit or store information on a server.
-## Minimal Design
+## Architecture-Led Design
 
-The site uses white, charcoal, and blue with system sans-serif typography and compact spacing. The home page shows a factual profile, three selected projects with photographs, and links that open specific automation categories. Projects are displayed in a three-column grid on desktop and stacked on phones. Experience, Education, and Interests share an About navigation.
+SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The sharper, existing I-35 photograph opens the homepage; the lower-resolution Clifty Creek and representative earthwork photographs remain in smaller project positions. Engineering facts, role details, and case-study links remain intact.
+
+Noto Sans Regular, Medium, and Bold are served locally from `assets/fonts/`. These files are subset to Latin text, punctuation, and arrows; the included `OFL.txt` preserves the font license. Body text, headings, and captions have explicit sizes and weights, and content reflows for phones and tablets. No external font service is required.
 
 The public pages use `editorial.css` and `editorial.js`. Navigation and footer HTML are repeated across the pages; update them consistently. No package installation or build step is required.
 
