@@ -48,7 +48,15 @@ document.querySelectorAll('.site-nav').forEach((nav, navIndex) => {
 
 document.querySelectorAll('.nav-links a, .about-nav a').forEach((link) => {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  if (link.getAttribute('href') === currentPath || (link.hasAttribute('data-about-link') && ['education.html', 'interests.html'].includes(currentPath))) link.setAttribute('aria-current', 'page');
+  const href = link.getAttribute('href');
+  if (href === currentPath) {
+    link.setAttribute('aria-current', 'page');
+  } else if (
+    (link.hasAttribute('data-about-link') && ['education.html', 'interests.html', 'resume.html'].includes(currentPath)) ||
+    (link.closest('.nav-links') && href === 'projects.html' && currentPath.startsWith('case-study-'))
+  ) {
+    link.setAttribute('aria-current', 'location');
+  }
 });
 
 document.querySelectorAll('[data-interest-tabs]').forEach((tabList) => {
