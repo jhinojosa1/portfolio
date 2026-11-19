@@ -220,6 +220,9 @@ if (contactForm) {
 document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   const automations = Array.from(grid.querySelectorAll('[data-automation]'));
   const search = document.querySelector('[data-automation-search]');
+  const searchToggle = document.querySelector('[data-automation-search-toggle]');
+  const searchPanel = document.getElementById('automation-search-panel');
+  const clearSearch = document.querySelector('[data-automation-search-clear]');
   const filters = Array.from(document.querySelectorAll('[data-automation-filter]'));
   const count = document.querySelector('[data-automation-count]');
   const empty = document.querySelector('[data-automation-empty]');
@@ -231,6 +234,8 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
 
   const updateAutomations = () => {
     const query = (search?.value || '').trim().toLowerCase();
+    searchToggle?.classList.toggle('has-query', Boolean(query));
+    if (clearSearch) clearSearch.hidden = !query;
     let visible = 0;
     automations.forEach((automation) => {
       const categories = (automation.dataset.category || '').split(' ');
@@ -256,6 +261,27 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
       updateAutomations();
     });
   });
+  if (search && searchToggle && searchPanel) {
+    const setSearchOpen = (open, moveFocus = true) => {
+      searchPanel.hidden = !open;
+      searchToggle.setAttribute('aria-expanded', String(open));
+      searchToggle.setAttribute('aria-label', open ? 'Close automation search' : 'Open automation search');
+      if (moveFocus) (open ? search : searchToggle).focus();
+    };
+
+    searchToggle.addEventListener('click', () => setSearchOpen(searchPanel.hidden));
+    searchPanel.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      setSearchOpen(false);
+    });
+    clearSearch?.addEventListener('click', () => {
+      search.value = '';
+      updateAutomations();
+      search.focus();
+    });
+    if (featuredQuery) setSearchOpen(true, false);
+  }
   search?.addEventListener('input', updateAutomations);
   filters.forEach((filter) => {
     const active = filter.dataset.automationFilter === activeCategory;

@@ -23,6 +23,7 @@ Purpose: Portfolio project.
 - [x] Apply preview annotations for compact page headers, descriptive automation titles, Experience navigation, and the resume download icon.
 - [x] Add Field Note to the homepage with its product mark and contact link.
 - [x] Redesign the homepage around CP2 and Field Note, and align automation search with the category filters.
+- [x] Replace the always-visible automation search field with a search icon.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs
