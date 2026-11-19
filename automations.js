@@ -216,11 +216,23 @@ if (grid) {
     const search = [automation.name, automation.label, automation.summary, automation.meta, ...automation.categories].join(' ').toLowerCase();
     const status = automation.status ? `<span class="automation-status">${escapeHtml(automation.status)}</span>` : '';
     const images = automationImages[automation.name];
+    const preview = images?.[0];
+    const thumbnail = preview
+      ? `<img class="automation-thumbnail" src="${escapeHtml(preview[0])}" alt="" width="96" height="68" loading="lazy" decoding="async" />`
+      : '';
+    const imageCount = preview ? `<span class="automation-image-count">${images.length} ${images.length === 1 ? 'screenshot' : 'screenshots'}</span>` : '';
     const gallery = images?.length ? `<div class="automation-gallery">${images.map(([src, alt]) =>
       `<a href="${escapeHtml(src)}"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" /></a>`
     ).join('')}</div>` : '';
     return `<article class="automation-card" data-automation data-category="${automation.categories.join(' ')}" data-search="${escapeHtml(search)}">
-      <details><summary><span class="automation-category">${escapeHtml(automation.label)}</span><h2>${escapeHtml(automation.name)}</h2><span class="automation-meta">${escapeHtml(automation.meta)}</span></summary>
+      <details>
+      <summary${preview ? ' class="automation-summary-with-image"' : ''}>
+        <span class="automation-category">${escapeHtml(automation.label)}</span>
+        <h2>${escapeHtml(automation.name)}</h2>
+        <span class="automation-meta">${escapeHtml(automation.meta)}</span>
+        ${imageCount}
+        ${thumbnail}
+      </summary>
       <div class="automation-description">
         <p>${escapeHtml(automation.summary)}</p>
         ${gallery}

@@ -85,7 +85,7 @@ Check all eleven public pages in Chromium, Firefox, and WebKit at phone, tablet,
 
 ## Automation Catalog
 
-The Automations page renders a deduplicated 85-entry catalog from `automations.js`. Counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Entries expand to show their description and any available workflow images. Select an image to open it at full size. Development entries show their status in the details.
+The Automations page renders a deduplicated 85-entry catalog from `automations.js`. Counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Entries with workflow images show a thumbnail before expansion. Expand an entry for its description and complete gallery. Select an image to open it at full size. Development entries show their status in the details.
 
 ## Coaching
 
