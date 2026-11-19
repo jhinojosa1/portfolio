@@ -5,58 +5,67 @@
 
 
 <link rel="preload" href="assets/fonts/NotoSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="stylesheet" href="editorial.css?v=field-note" /><script src="editorial.js?v=compact-pages" defer></script></head><body>
+<link rel="stylesheet" href="editorial.css?v=home-refresh" /><script src="editorial.js?v=compact-pages" defer></script></head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <nav class="site-nav" aria-label="Primary navigation"><div class="nav-shell"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JH</span>Jorge Hinojosa</a><div class="nav-links"><a href="projects.html">Projects</a><a href="automations.html">Automations</a><a href="timeline.html" data-experience-link>Experience</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div></div></nav>
 <main id="main-content" class="home-page editorial-shell">
-  <header class="work-header">
-    <h1>Civil Construction &amp; Field Engineering</h1>
-    <p>I am a mechanical engineer specializing in civil construction, field quality control, and infrastructure coordination. I develop automation tools for field reporting, CAD, and project controls.</p>
-  </header>
+  <div class="home-intro">
+    <header class="work-header">
+      <h1>Civil construction &amp; field engineering</h1>
+      <p>Mechanical engineer with experience in soil treatment, construction quality control, and utility coordination. I build automation tools for field reporting, CAD, and project controls.</p>
+      <a class="text-link" href="timeline.html">View experience <span aria-hidden="true">↗</span></a>
+    </header>
 
-  <section aria-labelledby="selected-projects">
-    <h2 id="selected-projects" class="work-section-title">Selected projects</h2>
-    <div class="project-grid">
-      <article class="project-preview project-preview-featured">
-        <a class="project-feature-link" href="case-study-vg-cp2.html">
-          <img src="assets/featured/vogtle-soil-work.jpg" width="650" height="433" fetchpriority="high" alt="Representative soil placement and earthwork operation" />
-          <div>
-            <h3>Venture Global CP2 <span aria-hidden="true">↗</span></h3>
-            <p>Soil solidification · Cameron Parish, Louisiana</p>
-            <p class="project-feature-role">Field Engineer for an $86 million scope that treated approximately 2.8 million cubic yards of soil.</p>
-          </div>
-        </a>
-        <p class="project-image-note">Representative earthwork photo</p>
-      </article>
-      <article class="project-preview">
+    <section id="field-note" class="startup-section" aria-labelledby="field-note-title">
+      <div class="startup-heading">
+        <img src="assets/brand/field-note.svg" alt="" width="44" height="44" />
+        <h2 id="field-note-title">Field Note</h2>
+      </div>
+      <p>I’m building a workspace for construction teams to ask questions about drawings and specifications and check answers against the cited pages.</p>
+      <a class="text-link" href="contact.html">Contact me about Field Note <span aria-hidden="true">↗</span></a>
+    </section>
+  </div>
+
+  <section class="home-projects" aria-labelledby="selected-projects">
+    <header class="home-section-heading">
+      <h2 id="selected-projects">Selected projects</h2>
+      <a class="text-link" href="projects.html">View all projects <span aria-hidden="true">↗</span></a>
+    </header>
+    <article class="home-feature">
+      <figure>
+        <img src="assets/featured/vogtle-soil-work.jpg" width="650" height="433" fetchpriority="high" alt="Representative soil placement and earthwork operation" />
+        <figcaption>Representative earthwork photo</figcaption>
+      </figure>
+      <div class="home-feature-content">
+        <p class="home-project-category">Soil solidification · Cameron Parish, Louisiana</p>
+        <h3>Venture Global CP2</h3>
+        <p>As Field Engineer, I managed cement usage and tracked stabilized-soil production.</p>
+        <dl class="home-project-facts">
+          <div><dt>Project scope</dt><dd>$86 million</dd></div>
+          <div><dt>Soil treated</dt><dd>About 2.8M cubic yards</dd></div>
+        </dl>
+        <a class="home-case-link" href="case-study-vg-cp2.html">Read the CP2 case study <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <div class="home-project-grid">
+      <article class="home-project">
         <a href="case-study-clifty-creek.html">
           <img src="assets/featured/clifty-creek-aerial.jpg" width="600" height="451" loading="lazy" alt="Aerial view of Clifty Creek Generating Station beside the Ohio River" />
-          <h3>Clifty Creek <span aria-hidden="true">↗</span></h3>
+          <div><h3>Clifty Creek <span aria-hidden="true">↗</span></h3><p>Landfill construction and ash pond closure · Madison, Indiana</p></div>
         </a>
-        <p>Landfill construction and ash pond closure · Madison, Indiana</p>
       </article>
-      <article class="project-preview">
+      <article class="home-project">
         <a href="case-study-i35-georgetown.html">
-          <img src="assets/featured/i35-georgetown-map.png" width="658" height="900" alt="I-35 corridor map from SH 29 in Georgetown to SH 45 North near Round Rock" class="project-map" loading="lazy" />
-          <h3>TxDOT I-35 <span aria-hidden="true">↗</span></h3>
+          <img src="assets/featured/i35-georgetown-map.png" width="658" height="900" loading="lazy" alt="I-35 corridor map from SH 29 in Georgetown to SH 45 North near Round Rock" />
+          <div><h3>TxDOT I-35 <span aria-hidden="true">↗</span></h3><p>Utility investigations and design coordination · Georgetown, Texas</p></div>
         </a>
-        <p>Utility investigations and design coordination · Georgetown, Texas</p>
-        <p class="project-image-note"><a href="https://www.txdot.gov/content/dam/project-sites/mobility35/documents/mobility35-georgetown-round-rock-fact-sheet-032524.pdf">TxDOT corridor map</a></p>
       </article>
     </div>
-  </section>
-
-<details class="photo-credits"><summary>Photography credits</summary><p>Clifty Creek: <a href="https://www.wolverinepowercooperative.com/affordability/">Wolverine Power Cooperative</a>. Representative earthwork: <a href="https://vogtlegallery.georgiapower.com/gallery/early-construction/7.asp">Georgia Power</a>.</p></details>
-
-  <section id="field-note" class="startup-section" aria-labelledby="field-note-title">
-    <div class="startup-heading">
-      <img src="assets/brand/field-note.svg" alt="" width="48" height="48" />
-      <h2 id="field-note-title">Field Note</h2>
-    </div>
-    <div class="startup-description">
-      <p>I’m building Field Note to help construction teams find answers in project drawings and specifications. Teams can upload documents, ask questions, and open the cited pages to verify answers at the source.</p>
-      <a class="text-link" href="contact.html">Contact me about Field Note</a>
-    </div>
+    <details class="photo-credits">
+      <summary>Image credits</summary>
+      <p>Clifty Creek: <a href="https://www.wolverinepowercooperative.com/affordability/">Wolverine Power Cooperative</a>. Representative earthwork: <a href="https://vogtlegallery.georgiapower.com/gallery/early-construction/7.asp">Georgia Power</a>. I-35 corridor map: <a href="https://www.txdot.gov/content/dam/project-sites/mobility35/documents/mobility35-georgetown-round-rock-fact-sheet-032524.pdf">TxDOT</a>.</p>
+    </details>
   </section>
 </main><footer class="site-footer"><div class="editorial-shell footer-shell"><p>Jorge Hinojosa <span>· Houston, Texas</span></p><div><a href="mailto:hinojosasb72@gmail.com">Email me ↗</a></div></div></footer>
 </body></html>

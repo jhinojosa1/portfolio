@@ -45,7 +45,7 @@ Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de
 `photo-shortlist.html` and `assets/featured/candidates/` are local review materials excluded by `.gitignore`. They contain three candidate images for each featured project. Confirm usage permission before moving a non-Creative-Commons candidate into the public site.
 ## Site Pages
 
-- `index.html` — brief introduction, selected projects, and a Field Note startup section.
+- `index.html` — engineering introduction and Field Note feature, followed by the Venture Global CP2 case study and two more projects.
 - `projects.html` — selected project collection.
 - `timeline.html` — career and project timeline.
 - `interests.html` — working approach and technical interests.
@@ -61,7 +61,7 @@ Navigation is repeated across each page. Update the shared navigation block cons
 The Contact form submits to [FormSubmit](https://formsubmit.co/) for email delivery. With JavaScript enabled, submission feedback appears on the page. The first real submission triggers an activation email to the recipient. Confirm that email before relying on the form, then verify inbox delivery. A direct email link remains available.
 ## Architecture-Led Design
 
-SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The homepage features Venture Global CP2 with a credited representative earthwork photo. The Georgetown corridor map appears with the I-35 project. Each case study opens with role, scope, and personal contribution. Project names in Experience link directly to their case studies. The Automations page opens directly on the searchable catalog. Display titles describe each tool’s function, and prior names remain searchable.
+SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The homepage features Venture Global CP2 with a credited representative earthwork photo. The Georgetown corridor map appears with the I-35 project. Each case study opens with role, scope, and personal contribution. Project names in Experience link directly to their case studies. The Automations page opens directly on the searchable catalog, with search and filters sharing a row where space allows. Display titles describe each tool’s function, and prior names remain searchable.
 
 Noto Sans Regular, Medium, and Bold are served locally from `assets/fonts/`. These files are subset to Latin text, punctuation, and arrows; the included `OFL.txt` preserves the font license. Body text, headings, and captions have explicit sizes and weights, and content reflows for phones and tablets. No external font service is required.
 
