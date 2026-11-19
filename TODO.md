@@ -20,6 +20,7 @@ Purpose: Portfolio project.
 - [x] Restore the Contact form and use a responsive layout for the form and direct contact links.
 - [x] Submit Contact inquiries directly through the site and show delivery service feedback.
 - [ ] Activate the form recipient through FormSubmit and verify inbox delivery.
+- [x] Apply preview annotations for compact page headers, descriptive automation titles, Experience navigation, and the resume download icon.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs

@@ -52,7 +52,7 @@ document.querySelectorAll('.nav-links a, .about-nav a').forEach((link) => {
   if (href === currentPath) {
     link.setAttribute('aria-current', 'page');
   } else if (
-    (link.hasAttribute('data-about-link') && ['education.html', 'interests.html'].includes(currentPath)) ||
+    (link.hasAttribute('data-experience-link') && ['education.html', 'interests.html'].includes(currentPath)) ||
     (link.closest('.nav-links') && href === 'projects.html' && currentPath.startsWith('case-study-'))
   ) {
     link.setAttribute('aria-current', 'location');
