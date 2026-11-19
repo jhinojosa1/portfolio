@@ -31,7 +31,9 @@ The OpenMANET and Meshtastic cards in `interests.html` include visual placeholde
 
 ## Brand Assets
 
-- `assets/brand/rice-shield.png` — official Rice shield downloaded from the [Rice Brand Guide](https://brand.rice.edu/logos). The homepage displays it with the adjacent Rice University name and above the university's 36-pixel minimum size guidance.
+Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de Paul, and Rice University marks recovered from the earlier redesign branch.
+
+- `assets/brand/rice-shield.png` — official Rice shield downloaded from the [Rice Brand Guide](https://brand.rice.edu/logos). It appears beside Rice University’s name on Education and Experience.
 
 ## Featured-Image Credits
 
@@ -83,7 +85,7 @@ Check all eleven public pages at desktop, tablet, and phone widths. Verify mobil
 
 ## Automation Catalog
 
-The Automations page renders a deduplicated 85-entry catalog from `automations.js`. Counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Entries expand to show their full description and an impact score from 1 to 5, ranging from a targeted utility to team-scale impact. Development entries remain visible and carry a separate status badge.
+The Automations page renders a deduplicated 85-entry catalog from `automations.js`. Counts are automatic, and visitors can search by name, workflow, or technology and filter by CAD, Excel, field operations, reporting, apps and platforms, AI, or utilities. Project-specific tools remain in the catalog under their functional categories instead of using a vague separate filter. Umbrella repositories and archived versions are treated as sources rather than separate catalog entries. The automations are private, so the public catalog contains no repository URLs or source links. Entries expand to show their description and any available workflow images. Select an image to open it at full size. Development entries show their status in the details.
 
 ## Coaching
 

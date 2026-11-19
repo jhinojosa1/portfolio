@@ -104,46 +104,109 @@ const excelAutomations = new Set([
 automations.forEach((automation) => {
   if (excelAutomations.has(automation.name) && !automation.categories.includes('excel')) automation.categories.push('excel');
 });
-const impactFiveAutomations = new Set([
-  'Turnover Automation',
-  'Trimble TSC7 Data Puller',
-  'CAT VisionLink Fault Report Pipeline',
-  'DAR Field Reporting App',
-  'Load Count Log',
-  'DAR Email-to-Workbook Pipeline',
-  'QA/QC Elevation Workbooks',
-  'ENTACT Civil 3D Assistant',
-  'MasterFlow Cut / Fill Heat Map',
-  'Hermes DAR Controller',
-  'Viewpoint–DAR Time Audit',
-  'Jobsite Field Map Builder',
-  'WBSP V-Ditch Surface Generator',
-  'LRCP V-Ditch Design Workflow',
-  'WBSP Lime-Mixing LandXML Generator',
-  'As-Built Drainage QA Highlighter'
-]);
-const impactOneAutomations = new Set([
-  'Layer List',
-  'Coordinate Picker',
-  'AutoLISP Unloader',
-  'XREF Reload All',
-  'Site Map Draw-Order Cleanup',
-  'Completed Grid QA Check'
-]);
-const impactFor = (automation) => {
-  if (impactFiveAutomations.has(automation.name)) return 5;
-  if (impactOneAutomations.has(automation.name)) return 1;
-  const has = (category) => automation.categories.includes(category);
-  if (has('apps') || (has('reporting') && has('data')) || (has('field') && has('data')) || (has('cad') && has('ai'))) return 4;
-  if (['field','reporting','data','ai'].some(has)) return 3;
-  return 2;
-};
-const impactDescriptions = {
-  1: 'Small utility with targeted task-level impact',
-  2: 'Focused productivity improvement',
-  3: 'Recurring workflow improvement',
-  4: 'Multi-step operational impact',
-  5: 'Team-scale or business-critical impact'
+const automationImages = {
+  "Custom Grid Maker": [
+    [
+      "assets/automations/custom-grid-maker.png",
+      "AutoCAD treatment grid layout with rectangular work areas and grid labels"
+    ]
+  ],
+  "Grid Duplicate Cleanup": [
+    [
+      "assets/automations/grid-duplicate-cleanup.png",
+      "AutoCAD treatment-grid drawing showing adjacent labeled grid cells used for duplicate-grid cleanup"
+    ]
+  ],
+  "Grid Label Duplicate Checker": [
+    [
+      "assets/automations/grid-label-duplicate-checker.png",
+      "AutoCAD treatment-grid drawing showing adjacent grid cells with distinct labels for duplicate-label checking"
+    ]
+  ],
+  "Hyperlink Grid Labeler": [
+    [
+      "assets/automations/hyperlink-grid-labeler.png",
+      "AutoCAD treatment-grid drawing with centered grid labels generated from hyperlink identifiers"
+    ]
+  ],
+  "DAR Area Export": [
+    [
+      "assets/automations/dar-area-export-table.png",
+      "Exported spreadsheet table listing treatment-grid identifiers and calculated areas"
+    ],
+    [
+      "assets/automations/dar-area-export-grid.png",
+      "AutoCAD drawing showing the labeled treatment grids used to calculate the exported areas"
+    ]
+  ],
+  "Treated Grid Center Export": [
+    [
+      "assets/automations/treated-grid-center-export.png",
+      "AutoCAD drawing with red treatment-grid outlines and marked center points labeled for export"
+    ]
+  ],
+  "Trimble TSC7 Data Puller": [
+    [
+      "assets/automations/trimble-tsc7-data-puller.png",
+      "Trimble Siteworks screen showing Point Manager, control-point editing, and point-file import tools"
+    ]
+  ],
+  "Outlook Daily Summary": [
+    [
+      "assets/automations/outlook-daily-summary.png",
+      "Seven-day Outlook email summary organized into action items, project updates, travel and administration, and skipped noise, with personal names blurred"
+    ]
+  ],
+  "StretchLeader": [
+    [
+      "assets/automations/stretchleader.png",
+      "Before-and-after diagram showing a multileader extended to a consistent longer length"
+    ]
+  ],
+  "PDF Steamroller": [
+    [
+      "assets/automations/pdf-steamroller.png",
+      "PDF Steamroller command-line application with an AutoCAD PDF file-selection window open"
+    ]
+  ],
+  "Photo Compressor": [
+    [
+      "assets/automations/photo-compressor.png",
+      "Photo Compressor desktop app with folder selection, save location, compression level, results, and progress controls"
+    ]
+  ],
+  "DAR Field Reporting App": [
+    [
+      "assets/automations/dar-dashboard.png",
+      "Daily Activity Report dashboard with controls to start a report, manage contacts, and refresh the field roster"
+    ],
+    [
+      "assets/automations/dar-site-details.png",
+      "Field Report site-details screen for weather, pumping, subcontractors, and deliveries"
+    ],
+    [
+      "assets/automations/dar-notes.png",
+      "Field Report notes screen organized by T and M, WBSP, landfill, and LRCP work areas"
+    ]
+  ],
+  "MasterFlow Cut / Fill Heat Map": [
+    [
+      "assets/automations/masterflow-cut-fill-heat-map.png",
+      "Representative cut and fill heat map using sample grading data"
+    ]
+  ],
+  "Viewpoint–DAR Time Audit": [
+    [
+      "assets/automations/viewpoint-dar-time-audit.png",
+      "Representative time audit workbook using anonymous sample crew data"
+    ]
+  ],
+  "EOD Grid Change": [
+    [
+      "assets/automations/end-of-day-grid-change.png",
+      "AutoCAD treatment-grid drawing showing completed grids changed from magenta to black with yellow change markers"
+    ]
+  ]
 };
 
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character]));
@@ -152,10 +215,17 @@ if (grid) {
   grid.innerHTML = automations.map((automation) => {
     const search = [automation.name, automation.label, automation.summary, automation.meta, ...automation.categories].join(' ').toLowerCase();
     const status = automation.status ? `<span class="automation-status">${escapeHtml(automation.status)}</span>` : '';
-    const impact = impactFor(automation);
+    const images = automationImages[automation.name];
+    const gallery = images?.length ? `<div class="automation-gallery">${images.map(([src, alt]) =>
+      `<a href="${escapeHtml(src)}"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" /></a>`
+    ).join('')}</div>` : '';
     return `<article class="automation-card" data-automation data-category="${automation.categories.join(' ')}" data-search="${escapeHtml(search)}">
       <details><summary><span class="automation-category">${escapeHtml(automation.label)}</span><h2>${escapeHtml(automation.name)}</h2><span class="automation-meta">${escapeHtml(automation.meta)}</span></summary>
-      <div class="automation-description"><p>${escapeHtml(automation.summary)}</p><div class="automation-heading"><span class="impact-indicator" title="${escapeHtml(impactDescriptions[impact])}">Impact ${impact}/5</span>${status}<span class="automation-private">Private automation</span></div></div></details>
+      <div class="automation-description">
+        <p>${escapeHtml(automation.summary)}</p>
+        ${gallery}
+        ${status}
+      </div></details>
     </article>`;
   }).join('');
 }
