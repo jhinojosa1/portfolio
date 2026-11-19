@@ -37,6 +37,7 @@ The OpenMANET and Meshtastic cards in `interests.html` include visual placeholde
 
 - `assets/featured/clifty-creek-aerial.jpg` — aerial view of Clifty Creek Generating Station, via [Wolverine Power Cooperative](https://www.wolverinepowercooperative.com/affordability/). Confirm reuse permission before publishing.
 - `assets/featured/vogtle-soil-work.jpg` — soil placement and earthwork at Plant Vogtle, via the [Georgia Power construction archive](https://vogtlegallery.georgiapower.com/gallery/early-construction/7.asp). Confirm reuse permission before publishing.
+- `assets/featured/i35-georgetown-map.png` — corridor map from the [TxDOT project fact sheet](https://www.txdot.gov/content/dam/project-sites/mobility35/documents/mobility35-georgetown-round-rock-fact-sheet-032524.pdf).
 - `assets/featured/i35-birdseye-highway.jpg` — representative aerial photograph of I-35 and US 290 by Murphpics, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Us290_and_I35_austin.jpg).
 
 `photo-shortlist.html` and `assets/featured/candidates/` are local review materials excluded by `.gitignore`. They contain three candidate images for each featured project. Confirm usage permission before moving a non-Creative-Commons candidate into the public site.
@@ -53,12 +54,12 @@ Navigation is repeated across each page. Update the shared navigation block cons
 
 `resume.html` previews the current public resume at `assets/resume/Jorge-Hinojosa-Resume.pdf`. Resume-backed website content was last synchronized on July 20, 2026. Follow [`RESUME-SYNC.md`](RESUME-SYNC.md) whenever a revised resume is provided so the PDF and the related website facts stay aligned.
 
-## Contact Form
+## Contact
 
-The contact form composes a pre-addressed email in the visitor's default email application. It does not submit or store information on a server.
+The Contact page shows a direct email link and a copy button where the browser supports clipboard access.
 ## Architecture-Led Design
 
-SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The sharper, existing I-35 photograph opens the homepage; the lower-resolution Clifty Creek and representative earthwork photographs remain in smaller project positions. Engineering facts, role details, and case-study links remain intact.
+SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The homepage features the Georgetown corridor map alongside project photography. Each case study opens with role, scope, and personal contribution. Project names in Experience link directly to their case studies. The Automations page highlights three tools above the searchable catalog.
 
 Noto Sans Regular, Medium, and Bold are served locally from `assets/fonts/`. These files are subset to Latin text, punctuation, and arrows; the included `OFL.txt` preserves the font license. Body text, headings, and captions have explicit sizes and weights, and content reflows for phones and tablets. No external font service is required.
 
@@ -78,7 +79,7 @@ Open http://localhost:4173/. This preview serves the checked-out branch. GitHub 
 
 ### Verification
 
-Check all eleven public pages at desktop, tablet, and phone widths. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. The contact form opens a composed email in the visitor's email application.
+Check all eleven public pages at desktop, tablet, and phone widths. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. Verify the direct email link and clipboard feedback.
 
 ## Automation Catalog
 

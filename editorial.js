@@ -158,22 +158,32 @@ document.querySelectorAll('[data-athlete-carousel]').forEach((carousel) => {
   show(0);
 });
 
-document.querySelectorAll('[data-email-form]').forEach((form) => {
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const subject = encodeURIComponent(data.get('subject') || 'Portfolio inquiry');
-    const body = encodeURIComponent('Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\n\n' + data.get('message'));
-    window.location.href = 'mailto:hinojosasb72@gmail.com?subject=' + subject + '&body=' + body;
+const copyEmail = document.querySelector('[data-copy-email]');
+const emailLink = document.querySelector('[data-contact-email]');
+const copyStatus = document.querySelector('[data-copy-status]');
+
+if (copyEmail && emailLink && copyStatus && navigator.clipboard?.writeText) {
+  copyEmail.hidden = false;
+  copyEmail.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(emailLink.textContent.trim());
+      copyStatus.textContent = 'Email address copied.';
+    } catch {
+      copyStatus.textContent = 'Select the email address to copy it manually.';
+    }
   });
-});
+}
+
 document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   const automations = Array.from(grid.querySelectorAll('[data-automation]'));
   const search = document.querySelector('[data-automation-search]');
   const filters = Array.from(document.querySelectorAll('[data-automation-filter]'));
   const count = document.querySelector('[data-automation-count]');
   const empty = document.querySelector('[data-automation-empty]');
-  const requestedCategory = new URLSearchParams(window.location.search).get('category');
+  const params = new URLSearchParams(window.location.search);
+  const requestedCategory = params.get('category');
+  const featuredQuery = params.get('q')?.trim() || '';
+  if (search && featuredQuery) search.value = featuredQuery;
   let activeCategory = filters.some(button => button.dataset.automationFilter === requestedCategory) ? requestedCategory : 'all';
 
   const updateAutomations = () => {
@@ -210,4 +220,8 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
     filter.setAttribute('aria-pressed', String(active));
   });
   updateAutomations();
+  if (featuredQuery) {
+    const visible = automations.filter((automation) => !automation.hidden);
+    if (visible.length === 1) visible[0].querySelector('details')?.setAttribute('open', '');
+  }
 });

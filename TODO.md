@@ -10,6 +10,7 @@ Purpose: Portfolio project.
 - [x] Revise the initial design following feedback: reduce empty space, replace the serif headings and slogans, and show project photographs on the home page.
 - [x] Apply Jorge’s selected SOM reference: architecture-led photography, monochrome presentation, locally hosted typography, and aligned project captions.
 - [x] Group the homepage around one project section and put the resume with the other About pages.
+- [x] Apply review improvements to case-study summaries, the Georgetown project visual, Experience links, Automations, and Contact.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs
