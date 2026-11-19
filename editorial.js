@@ -1,4 +1,4 @@
-const mobileNavQuery = window.matchMedia('(max-width: 680px)');
+const mobileNavQuery = window.matchMedia('(max-width: 720px)');
 
 document.querySelectorAll('.site-nav').forEach((nav, navIndex) => {
   const shell = nav.querySelector('.nav-shell');
@@ -13,7 +13,7 @@ document.querySelectorAll('.site-nav').forEach((nav, navIndex) => {
   toggle.setAttribute('aria-controls', menuId);
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-label', 'Open navigation menu');
-  toggle.innerHTML = '<span class="nav-toggle-lines" aria-hidden="true"></span>';
+  toggle.innerHTML = '<span class="nav-toggle-lines" aria-hidden="true"></span><span>Menu</span>';
   shell.insertBefore(toggle, links);
   nav.classList.add('has-menu-toggle');
 

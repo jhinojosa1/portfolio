@@ -54,7 +54,7 @@ Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de
 Navigation is repeated across each page. Update the shared navigation block consistently when adding a new page.
 ## Resume
 
-`resume.html` previews the current public resume at `assets/resume/Jorge-Hinojosa-Resume.pdf`. Resume-backed website content was last synchronized on July 20, 2026. Follow [`RESUME-SYNC.md`](RESUME-SYNC.md) whenever a revised resume is provided so the PDF and the related website facts stay aligned.
+`resume.html` links to and, on wider screens with a pointer, previews the current public resume at `assets/resume/Jorge-Hinojosa-Resume.pdf`. Resume-backed website content was last synchronized on July 20, 2026. Follow [`RESUME-SYNC.md`](RESUME-SYNC.md) whenever a revised resume is provided so the PDF and the related website facts stay aligned.
 
 ## Contact
 
@@ -81,7 +81,7 @@ Open http://localhost:4173/. This preview serves the checked-out branch. GitHub 
 
 ### Verification
 
-Check all eleven public pages at desktop, tablet, and phone widths. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. Verify the direct email link and clipboard feedback.
+Check all eleven public pages in Chromium, Firefox, and WebKit at phone, tablet, and desktop widths. The Projects page uses stacked cards on phones, rows on tablets, and three columns on desktop. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. Verify the direct email link and clipboard feedback.
 
 ## Automation Catalog
 

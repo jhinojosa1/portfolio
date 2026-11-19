@@ -12,6 +12,7 @@ Purpose: Portfolio project.
 - [x] Group the homepage around one project section and put the resume with the other About pages.
 - [x] Apply review improvements to case-study summaries, the Georgetown project visual, Experience links, Automations, and Contact.
 - [x] Restore organization marks and the existing automation workflow images, and remove promotional headings and impact scores.
+- [x] Refine the phone, tablet, and desktop layouts and verify rendering across browser engines.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs
