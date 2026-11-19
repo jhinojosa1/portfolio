@@ -14,6 +14,7 @@ Purpose: Portfolio project.
 - [x] Restore organization marks and the existing automation workflow images, and remove promotional headings and impact scores.
 - [x] Refine the phone, tablet, and desktop layouts and verify rendering across browser engines.
 - [x] Give Resume a dedicated primary navigation link.
+- [x] Revise public copy and automation descriptions for a direct, professional tone.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs
