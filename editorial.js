@@ -174,6 +174,23 @@ if (copyEmail && emailLink && copyStatus && navigator.clipboard?.writeText) {
   });
 }
 
+const contactForm = document.querySelector('[data-contact-form]');
+if (contactForm && emailLink) {
+  contactForm.hidden = false;
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const fields = new FormData(contactForm);
+    const subject = encodeURIComponent(fields.get('subject').trim());
+    const body = encodeURIComponent([
+      'Name: ' + fields.get('name').trim(),
+      'Email: ' + fields.get('email').trim(),
+      '',
+      fields.get('message').trim()
+    ].join('\r\n'));
+    window.location.href = emailLink.href + '?subject=' + subject + '&body=' + body;
+  });
+}
+
 document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
   const automations = Array.from(grid.querySelectorAll('[data-automation]'));
   const search = document.querySelector('[data-automation-search]');

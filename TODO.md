@@ -17,6 +17,7 @@ Purpose: Portfolio project.
 - [x] Revise public copy and automation descriptions for a direct, professional tone.
 - [x] Show screenshot previews on automation entries before expansion.
 - [x] Feature Venture Global CP2 and position organization logos in the Experience sidebar.
+- [x] Restore the Contact form and use a responsive layout for the form and direct contact links.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs
