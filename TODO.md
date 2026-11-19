@@ -21,6 +21,7 @@ Purpose: Portfolio project.
 - [x] Submit Contact inquiries directly through the site and show delivery service feedback.
 - [ ] Activate the form recipient through FormSubmit and verify inbox delivery.
 - [x] Apply preview annotations for compact page headers, descriptive automation titles, Experience navigation, and the resume download icon.
+- [x] Add Field Note to the homepage with its product mark and contact link.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs

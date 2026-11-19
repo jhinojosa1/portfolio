@@ -45,7 +45,7 @@ Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de
 `photo-shortlist.html` and `assets/featured/candidates/` are local review materials excluded by `.gitignore`. They contain three candidate images for each featured project. Confirm usage permission before moving a non-Creative-Commons candidate into the public site.
 ## Site Pages
 
-- `index.html` — brief introduction and one selected projects section.
+- `index.html` — brief introduction, selected projects, and a Field Note startup section.
 - `projects.html` — selected project collection.
 - `timeline.html` — career and project timeline.
 - `interests.html` — working approach and technical interests.
