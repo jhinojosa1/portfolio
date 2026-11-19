@@ -13,6 +13,7 @@ Purpose: Portfolio project.
 - [x] Apply review improvements to case-study summaries, the Georgetown project visual, Experience links, Automations, and Contact.
 - [x] Restore organization marks and the existing automation workflow images, and remove promotional headings and impact scores.
 - [x] Refine the phone, tablet, and desktop layouts and verify rendering across browser engines.
+- [x] Give Resume a dedicated primary navigation link.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs

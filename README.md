@@ -65,7 +65,7 @@ SOM is the visual reference selected by Jorge. The portfolio uses a wide photogr
 
 Noto Sans Regular, Medium, and Bold are served locally from `assets/fonts/`. These files are subset to Latin text, punctuation, and arrows; the included `OFL.txt` preserves the font license. Body text, headings, and captions have explicit sizes and weights, and content reflows for phones and tablets. No external font service is required.
 
-Primary navigation links to Projects, Automations, About, and Contact. About groups Experience, Education, Interests & Coaching, and Resume.
+Primary navigation links to Projects, Automations, About, Resume, and Contact. About groups Experience, Education, and Interests & Coaching.
 
 The public pages use `editorial.css` and `editorial.js`. Navigation and footer HTML are repeated across the pages; update them consistently. No package installation or build step is required.
 
