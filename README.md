@@ -31,7 +31,7 @@ The OpenMANET and Meshtastic cards in `interests.html` include visual placeholde
 
 ## Brand Assets
 
-Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de Paul, and Rice University marks recovered from the earlier redesign branch.
+Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de Paul, and Rice University marks in the left column alongside employment and education dates.
 
 - `assets/brand/rice-shield.png` — official Rice shield downloaded from the [Rice Brand Guide](https://brand.rice.edu/logos). It appears beside Rice University’s name on Education and Experience.
 
@@ -61,7 +61,7 @@ Navigation is repeated across each page. Update the shared navigation block cons
 The Contact page shows a direct email link and a copy button where the browser supports clipboard access.
 ## Architecture-Led Design
 
-SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The homepage features the Georgetown corridor map alongside project photography. Each case study opens with role, scope, and personal contribution. Project names in Experience link directly to their case studies. The Automations page highlights three tools above the searchable catalog.
+SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The homepage features Venture Global CP2 with a credited representative earthwork photo. The Georgetown corridor map appears with the I-35 project. Each case study opens with role, scope, and personal contribution. Project names in Experience link directly to their case studies. The Automations page highlights three tools above the searchable catalog.
 
 Noto Sans Regular, Medium, and Bold are served locally from `assets/fonts/`. These files are subset to Latin text, punctuation, and arrows; the included `OFL.txt` preserves the font license. Body text, headings, and captions have explicit sizes and weights, and content reflows for phones and tablets. No external font service is required.
 

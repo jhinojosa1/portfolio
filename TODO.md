@@ -16,6 +16,7 @@ Purpose: Portfolio project.
 - [x] Give Resume a dedicated primary navigation link.
 - [x] Revise public copy and automation descriptions for a direct, professional tone.
 - [x] Show screenshot previews on automation entries before expansion.
+- [x] Feature Venture Global CP2 and position organization logos in the Experience sidebar.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs
