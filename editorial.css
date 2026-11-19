@@ -150,7 +150,7 @@ p { margin-bottom: 14px; }
 .timeline-date { margin: 0; color: var(--soft); font-size: .8125rem; }
 .organization-heading { display: flex; align-items: center; gap: 14px; font-size: 1.375rem; }
 .timeline-entry .organization-heading { grid-column: 2; margin: 0; }
-.timeline-meta .organization-mark { display: block; width: 112px; max-width: 100%; height: 48px; }
+.timeline-meta .organization-mark { display: block; width: 168px; max-width: 100%; height: 80px; }
 .timeline-meta .organization-mark img { object-position: left center; }
 .organization-mark { display: grid; place-items: center; flex: 0 0 56px; height: 42px; background: white; }
 .organization-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
@@ -299,7 +299,7 @@ p { margin-bottom: 14px; }
   .timeline-entry, .timeline-projects { grid-template-columns: 1fr; }
   .timeline-entry .organization-heading, .timeline-entry > p:not(.timeline-date), .timeline-projects { grid-column: 1; }
   .timeline-meta { grid-row: auto; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
-  .timeline-meta .organization-mark { flex: 0 0 84px; height: 42px; }
+  .timeline-meta .organization-mark { flex: 0 0 128px; height: 64px; }
   .timeline-projects { gap: 18px; }
   .athlete-heading { display: block; }
   .athlete-highlights { grid-template-columns: 1fr; gap: 18px; }

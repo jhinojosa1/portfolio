@@ -24,6 +24,7 @@ Purpose: Portfolio project.
 - [x] Add Field Note to the homepage with its product mark and contact link.
 - [x] Redesign the homepage around CP2 and Field Note, and align automation search with the category filters.
 - [x] Replace the always-visible automation search field with a search icon.
+- [x] Enlarge all five organization logos on the Experience page.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs
