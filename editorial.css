@@ -232,7 +232,7 @@ p { margin-bottom: 14px; }
 .contact-intro .button { min-height: 44px; }
 .contact-form { padding: clamp(18px, 4vw, 36px); border: 1px solid var(--line); background: #fafafa; }
 .contact-form h2 { margin-bottom: 24px; }
-.contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.contact-fields { min-width: 0; margin: 0; padding: 0; border: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .contact-field { display: grid; gap: 6px; min-width: 0; }
 .contact-field-wide { grid-column: 1 / -1; }
 .contact-field label { font-size: .875rem; font-weight: 500; }
@@ -240,6 +240,7 @@ p { margin-bottom: 14px; }
 .contact-field textarea { display: block; resize: vertical; }
 .contact-form-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin-top: 20px; }
 .contact-form-actions button { min-height: 44px; }
+.contact-form-actions button:disabled { opacity: .7; cursor: wait; }
 .contact-form-actions p { margin: 0; color: var(--soft); font-size: .8125rem; }
 .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; overflow-wrap: anywhere; }
 .contact-status { margin: 4px 0; color: var(--soft); }

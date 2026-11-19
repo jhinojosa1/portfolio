@@ -18,6 +18,8 @@ Purpose: Portfolio project.
 - [x] Show screenshot previews on automation entries before expansion.
 - [x] Feature Venture Global CP2 and position organization logos in the Experience sidebar.
 - [x] Restore the Contact form and use a responsive layout for the form and direct contact links.
+- [x] Submit Contact inquiries directly through the site and show delivery service feedback.
+- [ ] Activate the form recipient through FormSubmit and verify inbox delivery.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs

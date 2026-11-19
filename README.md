@@ -58,7 +58,7 @@ Navigation is repeated across each page. Update the shared navigation block cons
 
 ## Contact
 
-The Contact page includes a form that opens a prepared draft in the visitor’s email app. A direct email link and a copy button provide alternate ways to get in touch.
+The Contact form submits to [FormSubmit](https://formsubmit.co/) for email delivery. With JavaScript enabled, submission feedback appears on the page. The first real submission triggers an activation email to the recipient. Confirm that email before relying on the form, then verify inbox delivery. A direct email link remains available.
 ## Architecture-Led Design
 
 SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The homepage features Venture Global CP2 with a credited representative earthwork photo. The Georgetown corridor map appears with the I-35 project. Each case study opens with role, scope, and personal contribution. Project names in Experience link directly to their case studies. The Automations page highlights three tools above the searchable catalog.
@@ -81,7 +81,7 @@ Open http://localhost:4173/. This preview serves the checked-out branch. GitHub 
 
 ### Verification
 
-Check all eleven public pages in Chromium, Firefox, and WebKit at phone, tablet, and desktop widths. The Projects page uses stacked cards on phones, rows on tablets, and three columns on desktop. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. Verify required fields, email draft formatting, the direct email link, and clipboard feedback.
+Check all eleven public pages in Chromium, Firefox, and WebKit at phone, tablet, and desktop widths. The Projects page uses stacked cards on phones, rows on tablets, and three columns on desktop. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. Verify required fields, submission feedback on success and failure, the direct email link, and clipboard feedback.
 
 ## Automation Catalog
 

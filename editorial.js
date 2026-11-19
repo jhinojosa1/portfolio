@@ -175,19 +175,45 @@ if (copyEmail && emailLink && copyStatus && navigator.clipboard?.writeText) {
 }
 
 const contactForm = document.querySelector('[data-contact-form]');
-if (contactForm && emailLink) {
-  contactForm.hidden = false;
-  contactForm.addEventListener('submit', (event) => {
+if (contactForm) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const fields = contactForm.querySelector('fieldset');
+  const status = contactForm.querySelector('[data-contact-status]');
+  const endpoint = new URL(contactForm.action);
+  endpoint.pathname = '/ajax' + endpoint.pathname;
+
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const fields = new FormData(contactForm);
-    const subject = encodeURIComponent(fields.get('subject').trim());
-    const body = encodeURIComponent([
-      'Name: ' + fields.get('name').trim(),
-      'Email: ' + fields.get('email').trim(),
-      '',
-      fields.get('message').trim()
-    ].join('\r\n'));
-    window.location.href = emailLink.href + '?subject=' + subject + '&body=' + body;
+    if (submitButton.disabled) return;
+
+    const data = Object.fromEntries(new FormData(contactForm));
+    data._captcha = 'false';
+    submitButton.disabled = true;
+    fields.disabled = true;
+    status.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        signal: AbortSignal.timeout?.(15000)
+      });
+      const result = await response.json();
+      const accepted = result.success === true || result.success === 'true';
+      const needsActivation = /activat|confirm your email/i.test(result.message || '');
+      if (!response.ok || !accepted || needsActivation) {
+        status.textContent = 'The form could not send your message. Please try again or use the email address on this page.';
+        return;
+      }
+      contactForm.reset();
+      status.textContent = 'Thank you. Your message was submitted.';
+    } catch {
+      status.textContent = 'The form could not confirm submission. Please try again or use the email address on this page.';
+    } finally {
+      submitButton.disabled = false;
+      fields.disabled = false;
+    }
   });
 }
 
