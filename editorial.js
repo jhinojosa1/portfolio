@@ -142,22 +142,6 @@ document.querySelectorAll('[data-athlete-carousel]').forEach((carousel) => {
   show(0);
 });
 
-const copyEmail = document.querySelector('[data-copy-email]');
-const emailLink = document.querySelector('[data-contact-email]');
-const copyStatus = document.querySelector('[data-copy-status]');
-
-if (copyEmail && emailLink && copyStatus && navigator.clipboard?.writeText) {
-  copyEmail.hidden = false;
-  copyEmail.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(emailLink.textContent.trim());
-      copyStatus.textContent = 'Email address copied.';
-    } catch {
-      copyStatus.textContent = 'Select the email address to copy it manually.';
-    }
-  });
-}
-
 const contactForm = document.querySelector('[data-contact-form]');
 if (contactForm) {
   const submitButton = contactForm.querySelector('button[type="submit"]');

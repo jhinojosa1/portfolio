@@ -84,7 +84,7 @@ Open http://localhost:4173/. This preview serves the checked-out branch. GitHub 
 
 ### Verification
 
-Check all eleven public pages in Chromium, Firefox, and WebKit at phone, tablet, and desktop widths. The Projects page uses stacked cards on phones, rows on tablets, and three columns on desktop. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. Verify required fields, submission feedback on success and failure, the direct email link, and clipboard feedback.
+Check all eleven public pages in Chromium, Firefox, and WebKit at phone, tablet, and desktop widths. The Projects page uses stacked cards on phones, rows on tablets, and three columns on desktop. Verify mobile navigation (including Escape), local links, images, the automation search and category filters, expanded automation details, interest tabs, the student-athlete gallery, and the resume PDF. Verify required fields, submission feedback on success and failure, and the direct email link.
 
 ## Automation Catalog
 
