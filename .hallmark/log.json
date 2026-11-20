@@ -1,0 +1,33 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Photographic",
+  "theme": "formwork",
+  "axes": "light/display-condensed/warm",
+  "hero": "Ledge",
+  "nav": "edge-aligned",
+  "footer": "mast",
+  "imagery": "photographs, the owner 4, mono",
+  "photos": [],
+  "entry": "none",
+  "fingerprint": "photographic-ledge-edge-mast-formwork-drawing",
+  "sections": [
+   "hero",
+   "split",
+   "index",
+   "band",
+   "figure-plate",
+   "statement-close",
+   "footer"
+  ],
+  "signature": "the drawing title block",
+  "waived": [
+   "78",
+   "49b"
+  ],
+  "prompt": "portfolio of a civil construction field engineer; hire",
+  "date": "2026-11-20"
+ }
+]

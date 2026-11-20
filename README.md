@@ -62,21 +62,23 @@ Navigation is repeated across each page. Update the shared navigation block cons
 ## Contact
 
 The Contact form submits to [FormSubmit](https://formsubmit.co/) for email delivery. With JavaScript enabled, submission feedback appears on the page. The first real submission triggers an activation email to the recipient. Confirm that email before relying on the form, then verify inbox delivery. A direct email link remains available.
-## Architecture-Led Design
+## Hallmark Redesign (`hallmark-work`)
 
-SOM is the visual reference selected by Jorge. The portfolio uses a wide photographic opening, black-and-white navigation, a consistent project grid, aligned captions, and restrained sans-serif typography. The homepage features Venture Global CP2 with a credited representative earthwork photo. The Georgetown corridor map appears with the I-35 project. Each case study opens with role, scope, and personal contribution. Project names in Experience link directly to their case studies. The Automations page opens directly on the searchable catalog, with a search icon beside the category filters. The icon opens the search field on demand. Display titles describe each tool’s function, and prior names remain searchable.
+The `hallmark-work` branch, cut from `redesign/minimal-professional`, restyles every public page as a construction drawing set: tracing-paper ground, blue-black ink, one red accent, square edges, and black-and-white photographs. Content, links, form fields, and script hooks are unchanged. The previous Noto Sans design remains on `redesign/minimal-professional`.
 
-Noto Sans Regular, Medium, and Bold are served locally from `assets/fonts/`. These files are subset to Latin text, punctuation, and arrows; the included `OFL.txt` preserves the font license. Body text, headings, and captions have explicit sizes and weights, and content reflows for phones and tablets. No external font service is required.
-
-Primary navigation links to Projects, Automations, Experience, Resume, and Contact. The Experience heading includes links to Education and Interests & Coaching.
-
-The public pages use `editorial.css` and `editorial.js`. Navigation and footer HTML are repeated across the pages; update them consistently. No package installation or build step is required.
+- **Stylesheets:** `editorial.css` (page styles, starting with the Hallmark stamp) imports `tokens.css` (colours, type, spacing) and `base.css` (shared base rules). Change colours and fonts in `tokens.css` only.
+- **Type:** Oswald 600 uppercase headings, Archivo body text, and Archivo Narrow for figures. Fonts are served locally from `assets/fonts/` as `.woff2`, with their licences in `OFL-*.txt`. The Noto Sans files are no longer referenced.
+- **Signature:** the title block, a ruled grid of role, scope, place, and dates styled like a construction drawing title block. It appears in the home hero, the CP2 feature, the project list, and each case study.
+- **Homepage order:** Clifty Creek hero, Field Note (dark band), Venture Global CP2 feature, project index, 85-automation panel, Houston contact close, footer. A "Field Note" link with its logo leads the top navigation on every page and jumps to `index.html#field-note`.
+- **Layout:** the home hero sizes to its content instead of the screen height and stays side by side down to 720px wide. Sections are spaced 120px apart, and title blocks show two cells per row on phones.
+- **Photographs** render in black and white through CSS filters, so the original files are unchanged. The I-35 map keeps its colour.
+- **Hallmark records:** `.hallmark/` holds before and after screenshots (`compare.html`), the before record, and the build log. Screenshots and records are git-ignored.
 
 ### Local review
 
 ```sh
 cd ~/Projects/portfolio
-git switch redesign/minimal-professional
+git switch hallmark-work
 python -m http.server 4173 --bind 127.0.0.1
 ```
 

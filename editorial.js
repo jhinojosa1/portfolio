@@ -321,3 +321,14 @@ document.querySelectorAll('[data-automation-grid]').forEach((grid) => {
     if (event.key === 'Escape' && activeLightbox) closeLightbox();
   });
 });
+
+// An embedded PDF never matches :focus, so mirror its focus onto the frame that draws the ring.
+document.querySelectorAll('.resume-frame').forEach((wrap) => {
+  const frame = wrap.querySelector('iframe');
+  if (!frame) return;
+  const sync = () => wrap.classList.toggle('is-focused', document.activeElement === frame);
+  window.addEventListener('blur', () => setTimeout(sync, 0));
+  window.addEventListener('focus', sync);
+  document.addEventListener('focusin', sync);
+  document.addEventListener('focusout', () => setTimeout(sync, 0));
+});
