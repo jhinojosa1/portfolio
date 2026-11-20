@@ -26,15 +26,17 @@ Purpose: Portfolio project.
 - [x] Replace the always-visible automation search field with a search icon.
 - [x] Enlarge all five organization logos on the Experience page.
 - [x] Streamline the full-site redesign across all eleven public pages, removing redundant sections and visual bloat while preserving the SOM-inspired monochrome and architectural navy aesthetic.
-- [ ] Replace the placeholder `href="#"` link for the Field Note website on `index.html` once the final URL is ready.
+- [ ] Add a link to the Field Note website on `index.html` once the final URL is ready.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Hallmark redesign (`hallmark-work`)
 
 - [x] Branch `hallmark-work` from `redesign/minimal-professional` and run a full Hallmark redesign of all eleven public pages (Formwork theme, drawing palette), keeping all content and wiring.
 - [x] Review layout at five screen sizes and fix the empty space and alignment problems (12 findings; review board published as a private claude.ai artifact).
+- [x] Remove the homepage contact section and footer, plus the Resume and Houston rows from the Contact page’s direct links.
+- [x] Lead the homepage with Field Note and consolidate all three featured projects into one preview slider that keeps rotating after manual navigation.
 - [ ] Review the redesign in a browser and choose between `hallmark-work` and `redesign/minimal-professional`.
-- [ ] Replace the 600 to 650px Clifty Creek and CP2 photos with larger originals (2000px or wider) so the hero and features can run larger.
+- [ ] Replace the 600 to 650px Clifty Creek and CP2 photos with larger originals (2000px or wider) for the project previews and case studies.
 - [ ] Add an actual site photograph from CP2 to replace the representative Georgia Power image.
 
 ## Active TODOs

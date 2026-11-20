@@ -45,14 +45,14 @@ Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de
 `photo-shortlist.html` and `assets/featured/candidates/` are local review materials excluded by `.gitignore`. They contain three candidate images for each featured project. Confirm usage permission before moving a non-Creative-Commons candidate into the public site.
 ## Site Pages
 
-- `index.html` — engineering introduction and Field Note feature, followed by the Venture Global CP2 case study, Clifty Creek, and TxDOT I-35.
+- `index.html` — Field Note, rotating previews for the three featured projects, and the automation catalog entry point.
 - `projects.html` — selected project collection.
 - `timeline.html` — career and project timeline with organization marks and linked case studies.
 - `education.html` — Rice University engineering degree and NCAA Division I Track & Field gallery.
 - `interests.html` — technical field-networking prototypes and youth Track & Field coaching.
 - `automations.html` — searchable, filterable 85-entry automation catalog with screenshot previews and lightbox viewer.
 - `resume.html` — PDF download and embedded desktop viewer with mobile download fallback.
-- `contact.html` — direct contact details and FormSubmit inquiry form.
+- `contact.html` — email, GitHub, and the FormSubmit inquiry form.
 
 Navigation is repeated across each page. Update the shared navigation block consistently when adding a new page.
 ## Resume
@@ -68,9 +68,9 @@ The `hallmark-work` branch, cut from `redesign/minimal-professional`, restyles e
 
 - **Stylesheets:** `editorial.css` (page styles, starting with the Hallmark stamp) imports `tokens.css` (colours, type, spacing) and `base.css` (shared base rules). Change colours and fonts in `tokens.css` only.
 - **Type:** Oswald 600 uppercase headings, Archivo body text, and Archivo Narrow for figures. Fonts are served locally from `assets/fonts/` as `.woff2`, with their licences in `OFL-*.txt`. The Noto Sans files are no longer referenced.
-- **Signature:** the title block, a ruled grid of role, scope, place, and dates styled like a construction drawing title block. It appears in the home hero, the CP2 feature, the project list, and each case study.
-- **Homepage order:** Clifty Creek hero, Field Note (dark band), Venture Global CP2 feature, project index, 85-automation panel, Houston contact close, footer. A "Field Note" link with its logo leads the top navigation on every page and jumps to `index.html#field-note`.
-- **Layout:** the home hero sizes to its content instead of the screen height and stays side by side down to 720px wide. Sections are spaced 120px apart, and title blocks show two cells per row on phones.
+- **Signature:** the title block, a ruled grid of project details styled like a construction drawing title block. It appears in the homepage project previews, the project list, and each case study.
+- **Homepage order:** Field Note hero, previews of Clifty Creek, Venture Global CP2, and TxDOT I-35, then the 85-automation panel. The previews rotate every seven seconds and continue rotating after manual navigation. The Pause button stops rotation. Visitors who prefer reduced motion start with rotation paused. The Field Note link in the navigation jumps to `index.html#field-note`.
+- **Layout:** the Field Note hero sizes to its content. The product mark and project previews stack above their copy on phones, and title blocks show two cells per row.
 - **Photographs** render in black and white through CSS filters, so the original files are unchanged. The I-35 map keeps its colour.
 - **Hallmark records:** `.hallmark/` holds before and after screenshots (`compare.html`), the before record, and the build log. Screenshots and records are git-ignored.
 

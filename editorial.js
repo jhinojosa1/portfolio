@@ -116,6 +116,73 @@ const addSwipeGesture = (element, onSwipe) => {
   }
 };
 
+document.querySelectorAll('[data-project-carousel]').forEach((carousel) => {
+  const previews = carousel.querySelector('.project-previews');
+  const slides = Array.from(previews.querySelectorAll('.project-preview'));
+  if (slides.length < 2) return;
+
+  const controls = carousel.querySelector('.project-carousel-controls');
+  const rotation = controls.querySelector('[data-project-rotation]');
+  const counter = controls.querySelector('[data-project-count]');
+  const status = carousel.querySelector('[data-project-status]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let current = 0;
+  let rotating = !reducedMotion.matches;
+  let timer;
+
+  const show = (index, announce = false) => {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, position) => slide.toggleAttribute('inert', position !== current));
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    if (announce) {
+      const title = slides[current].querySelector('h3').textContent;
+      status.textContent = `${title}, project ${current + 1} of ${slides.length}`;
+    }
+  };
+
+  const updateTimer = () => {
+    clearInterval(timer);
+    if (rotating && !document.hidden) {
+      timer = setInterval(() => {
+        if (!slides[current].contains(document.activeElement)) show(current + 1);
+      }, 7000);
+    }
+  };
+
+  const setRotation = (enabled) => {
+    rotating = enabled;
+    const action = rotating ? 'Pause' : 'Play';
+    rotation.textContent = action;
+    rotation.setAttribute('aria-label', `${action} project rotation`);
+    updateTimer();
+  };
+
+  const step = (direction) => {
+    show(current + direction, true);
+    updateTimer();
+  };
+
+  rotation.addEventListener('click', () => setRotation(!rotating));
+  controls.querySelector('[data-project-prev]').addEventListener('click', () => step(-1));
+  controls.querySelector('[data-project-next]').addEventListener('click', () => step(1));
+  controls.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    step(event.key === 'ArrowLeft' ? -1 : 1);
+  });
+  document.addEventListener('visibilitychange', updateTimer);
+  reducedMotion.addEventListener('change', (event) => {
+    if (event.matches) setRotation(false);
+  });
+  addSwipeGesture(previews, step);
+
+  show(0);
+  previews.classList.add('is-enhanced');
+  carousel.setAttribute('aria-roledescription', 'carousel');
+  controls.hidden = false;
+  setRotation(rotating);
+});
+
 document.querySelectorAll('[data-athlete-carousel]').forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll('.athlete-slide'));
   const dots = Array.from(carousel.querySelectorAll('[data-athlete-dot]'));
