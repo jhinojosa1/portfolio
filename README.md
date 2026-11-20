@@ -64,7 +64,7 @@ Navigation is repeated across each page. Update the shared navigation block cons
 The Contact form submits to [FormSubmit](https://formsubmit.co/) for email delivery. With JavaScript enabled, submission feedback appears on the page. The first real submission triggers an activation email to the recipient. Confirm that email before relying on the form, then verify inbox delivery. A direct email link remains available.
 ## Hallmark Redesign (`hallmark-work`)
 
-The `hallmark-work` branch, cut from `redesign/minimal-professional`, restyles every public page as a construction drawing set: tracing-paper ground, blue-black ink, one red accent, square edges, and black-and-white photographs. Content, links, form fields, and script hooks are unchanged. The previous Noto Sans design remains on `redesign/minimal-professional`.
+The `hallmark-work` branch, cut from `redesign/minimal-professional`, restyles every public page as a construction drawing set: tracing-paper ground, blue-black ink, one red accent, square edges, and black-and-white photographs. The earlier Noto Sans design is available in the branch history at commit `e10353c`.
 
 - **Stylesheets:** `editorial.css` (page styles, starting with the Hallmark stamp) imports `tokens.css` (colours, type, spacing) and `base.css` (shared base rules). Change colours and fonts in `tokens.css` only.
 - **Type:** Oswald 600 uppercase headings, Archivo body text, and Archivo Narrow for figures. Fonts are served locally from `assets/fonts/` as `.woff2`, with their licences in `OFL-*.txt`. The Noto Sans files are no longer referenced.

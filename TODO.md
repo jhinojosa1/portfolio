@@ -35,7 +35,7 @@ Purpose: Portfolio project.
 - [x] Review layout at five screen sizes and fix the empty space and alignment problems (12 findings; review board published as a private claude.ai artifact).
 - [x] Remove the homepage contact section and footer, plus the Resume and Houston rows from the Contact page’s direct links.
 - [x] Lead the homepage with Field Note and consolidate all three featured projects into one preview slider that keeps rotating after manual navigation.
-- [ ] Review the redesign in a browser and choose between `hallmark-work` and `redesign/minimal-professional`.
+- [ ] Finish reviewing `hallmark-work` in a browser before merging to `main`.
 - [ ] Replace the 600 to 650px Clifty Creek and CP2 photos with larger originals (2000px or wider) for the project previews and case studies.
 - [ ] Add an actual site photograph from CP2 to replace the representative Georgia Power image.
 
