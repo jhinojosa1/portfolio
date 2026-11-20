@@ -1,49 +1,146 @@
-<!doctype html><html lang="en"><head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="description" content="Field technology prototypes and coaching work explored by Jorge Hinojosa." /><title>Interests | Jorge Hinojosa</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Field technology prototypes and coaching work explored by Jorge Hinojosa." />
+  <title>Interests | Jorge Hinojosa</title>
+  <link rel="preload" href="assets/fonts/NotoSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="editorial.css?v=streamlined-2026" />
+  <script src="editorial.js?v=streamlined-2026" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JH</span>Jorge Hinojosa</a>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="automations.html">Automations</a>
+        <a href="timeline.html" data-experience-link>Experience</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
+  <main class="interest-page" id="main-content">
+    <div class="editorial-shell">
+      <header class="compact-page-heading section-toolbar">
+        <h1>Interests</h1>
+        <nav class="about-nav" aria-label="Related pages">
+          <a href="timeline.html">Experience</a>
+          <a href="education.html">Education</a>
+          <a href="interests.html">Interests &amp; coaching</a>
+        </nav>
+      </header>
 
-<link rel="preload" href="assets/fonts/NotoSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="stylesheet" href="editorial.css?v=compact-pages" /><script src="editorial.js?v=compact-pages" defer></script></head><body>
-<a class="skip-link" href="#main-content">Skip to content</a>
-<nav class="site-nav" aria-label="Primary navigation"><div class="nav-shell"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JH</span>Jorge Hinojosa</a><div class="nav-links"><a href="projects.html">Projects</a><a href="automations.html">Automations</a><a href="timeline.html" data-experience-link>Experience</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div></div></nav><nav class="about-nav editorial-shell" aria-label="About Jorge"><a href="timeline.html">Experience</a><a href="education.html">Education</a><a href="interests.html">Interests &amp; coaching</a></nav>
-<header class="interest-page-header"><div class="editorial-shell"><div class="interest-header-copy"><h1>Interests</h1><p>Independent engineering projects and track and field coaching.</p></div><div class="interest-tabs" role="tablist" aria-label="Interest sections" data-interest-tabs><button class="interest-tab is-active" id="engineering-tab" type="button" role="tab" aria-selected="true" aria-controls="engineering-panel" data-interest-tab="engineering">Engineering</button><button class="interest-tab" id="track-field-tab" type="button" role="tab" aria-selected="false" aria-controls="track-field-panel" tabindex="-1" data-interest-tab="track-field">Coaching</button></div></div></header>
-<main class="interest-page" id="main-content"><div class="editorial-shell">
-<section class="interest-panel" id="engineering-panel" role="tabpanel" aria-labelledby="engineering-tab" data-interest-panel="engineering">
-<div class="page-intro-row interest-panel-heading reveal"><h2>Current engineering projects</h2></div>
-<div class="interest-grid">
-<article class="interest-card reveal">
-<div class="interest-visual haul-visual"><div class="system-diagram" role="img" aria-label="Dump-truck GPS routes transmitted over LTE to an AI-assisted haul analysis system">
-<p class="diagram-kicker">GPS and LTE haul monitoring</p>
-<div class="diagram-flow"><span class="diagram-node"><strong>Dump trucks</strong><small>Capture GPS routes</small></span><i aria-hidden="true">→</i><span class="diagram-node"><strong>LTE uplink</strong><small>Transmit field data</small></span><i aria-hidden="true">→</i><span class="diagram-node"><strong>AI analysis</strong><small>Compare haul cycles</small></span></div>
-<div class="diagram-metrics"><span>Travel paths</span><span>Cycle time</span><span>Stops</span><span>Consistency</span></div>
-</div></div>
-<div class="interest-content"><p class="interest-status">Prototype</p><h2 class="card-title">Haul route monitoring</h2><p class="card-desc">I am developing a telematics prototype that uses GPS and 4G LTE to record dump truck routes and haul cycles. Planned analysis will use AI-assisted methods to compare routes, cycle times, stops, and route consistency without requiring a manufacturer subscription.</p><div class="interest-tech" aria-label="Project technologies"><span>GPS / GNSS</span><span>4G LTE</span><span>AI analysis</span><span>Fleet data</span></div><div class="interest-links"><a href="https://www.cat.com/en_US/by-industry/quarry-aggregates/technology-for-quarry-aggregates/productivity.html" target="_blank" rel="noopener">Industry context: VisionLink ↗</a></div></div>
-</article>
-<article class="interest-card reveal">
-<div class="interest-visual halow-visual"><div class="system-diagram" role="img" aria-label="Office internet extended over a long-range Wi-Fi HaLow link to machinery at a remote work location">
-<p class="diagram-kicker">WI-FI HALOW / REMOTE FIELD NETWORK</p>
-<div class="diagram-flow"><span class="diagram-node"><strong>Site office</strong><small>Existing internet</small></span><i aria-hidden="true">⇢</i><span class="diagram-node signal-node"><strong>HaLow link</strong><small>Sub-1 GHz Wi-Fi</small></span><i aria-hidden="true">⇢</i><span class="diagram-node"><strong>Field machine</strong><small>Local data access</small></span></div>
-<div class="diagram-metrics"><span>Survey files</span><span>Design data</span><span>Machine access</span><span>Open IP network</span></div>
-</div></div>
-<div class="interest-content"><p class="interest-status">Prototype</p><h2 class="card-title">Long-Range HaLow Field Network</h2><p class="card-desc">This prototype uses Wi-Fi HaLow radios, Raspberry Pi Zero 2 W field nodes, and a Raspberry Pi 4 gateway to extend site office connectivity to remote equipment. Intended uses include survey data transfer, design file exchange, and equipment communication. Range depends on terrain, antenna placement, interference, and line of sight.</p><div class="interest-tech" aria-label="Project technologies"><span>Wi-Fi HaLow</span><span>Raspberry Pi</span><span>OpenWrt</span><span>Field networking</span></div><div class="interest-links"><a href="https://openmanet.github.io/docs/hardware/raspberry-pi" target="_blank" rel="noopener">OpenMANET hardware ↗</a><a href="https://www.morsemicro.com/2024/09/09/pushing-the-limits-wi-fi-halow-testing-in-joshua-tree-national-park/" target="_blank" rel="noopener">HaLow field test ↗</a></div></div>
-</article>
-<article class="interest-card interest-card-wide reveal">
-<div class="interest-visual mesh-visual"><div class="system-diagram" role="img" aria-label="Solar-powered Meshtastic nodes relaying community messages across neighborhoods to form a resilient city mesh">
-<p class="diagram-kicker">LORA MESH / COMMUNITY RESILIENCE</p>
-<div class="diagram-flow"><span class="diagram-node"><strong>Solar node</strong><small>Low-cost, off-grid power</small></span><i aria-hidden="true">⇢</i><span class="diagram-node signal-node"><strong>Neighborhood relay</strong><small>Multi-hop messaging</small></span><i aria-hidden="true">⇢</i><span class="diagram-node"><strong>City mesh</strong><small>Community-scale reach</small></span></div>
-<div class="diagram-metrics"><span>LoRa radio</span><span>Solar power</span><span>Battery backup</span><span>No cell towers</span></div>
-</div></div>
-<div class="interest-content"><p class="interest-status">In planning</p><h2 class="card-title">Houston Community Resilience Mesh</h2><p class="card-desc">I am exploring a Houston-area Meshtastic network that would relay short messages over LoRa during cellular or internet outages. The proposed nodes would use solar power, battery backup, and weather-resistant enclosures. The network is intended to supplement established emergency communications.</p><div class="interest-tech" aria-label="Project technologies"><span>Meshtastic</span><span>LoRa</span><span>Solar power</span><span>Disaster readiness</span></div><div class="interest-links"><a href="https://meshtastic.org/" target="_blank" rel="noopener">Explore Meshtastic ↗</a><a href="https://site.meshtastic.org/" target="_blank" rel="noopener">Coverage planning tool ↗</a></div></div>
-</article>
-</div>
-</section>
-<section class="interest-panel" id="track-field-panel" role="tabpanel" aria-labelledby="track-field-tab" data-interest-panel="track-field" hidden>
-<section class="coaching-section reveal" aria-labelledby="coaching-title">
-<div class="coaching-heading"><div><h2 id="coaching-title">Track &amp; Field coaching</h2><p>I have coached track and field for kindergarten through eighth-grade students at St. Vincent de Paul Catholic School. Practices focus on event fundamentals, structured drills, and individual feedback.</p></div></div>
+      <div class="interest-tabs" role="tablist" aria-label="Interest sections" data-interest-tabs>
+        <button class="interest-tab is-active" id="engineering-tab" type="button" role="tab" aria-selected="true" aria-controls="engineering-panel" data-interest-tab="engineering">Engineering</button>
+        <button class="interest-tab" id="track-field-tab" type="button" role="tab" aria-selected="false" aria-controls="track-field-panel" tabindex="-1" data-interest-tab="track-field">Coaching</button>
+      </div>
 
-<div class="coaching-contact"><div><h3>Private coaching</h3><p>Contact me to discuss goals, experience level, scheduling, and coaching availability.</p></div><div class="coaching-actions"><a class="button" href="mailto:hinojosasb72@gmail.com?subject=Private%20Coaching%20Inquiry">Ask about private coaching ↗</a><a href="contact.html">View contact page</a></div></div>
-</section>
-</section>
-</div></main><footer class="site-footer"><div class="editorial-shell footer-shell"><p>Jorge Hinojosa <span>· Houston, Texas</span></p><div><a href="mailto:hinojosasb72@gmail.com">Email me ↗</a></div></div></footer>
-</body></html>
+      <section class="interest-panel" id="engineering-panel" role="tabpanel" aria-labelledby="engineering-tab" data-interest-panel="engineering">
+        <article class="interest-card">
+          <div class="interest-visual">
+            <div class="system-diagram" role="img" aria-label="Dump-truck GPS routes transmitted over LTE to an AI-assisted haul analysis system">
+              <p class="diagram-kicker">GPS and LTE haul monitoring</p>
+              <div class="diagram-flow">
+                <span class="diagram-node"><strong>Dump trucks</strong><small>Capture GPS routes</small></span>
+                <i aria-hidden="true">→</i>
+                <span class="diagram-node"><strong>LTE uplink</strong><small>Transmit field data</small></span>
+                <i aria-hidden="true">→</i>
+                <span class="diagram-node"><strong>AI analysis</strong><small>Compare haul cycles</small></span>
+              </div>
+              <div class="diagram-metrics"><span>Travel paths</span><span>Cycle time</span><span>Stops</span><span>Consistency</span></div>
+            </div>
+          </div>
+          <div class="interest-content">
+            <p class="interest-status">Prototype</p>
+            <h2 class="card-title">Haul route monitoring</h2>
+            <p class="card-desc">I am developing a telematics prototype that uses GPS and 4G LTE to record dump truck routes and haul cycles. Planned analysis will use AI-assisted methods to compare routes, cycle times, stops, and route consistency without requiring a manufacturer subscription.</p>
+            <div class="interest-tech" aria-label="Project technologies"><span>GPS / GNSS</span><span>4G LTE</span><span>AI analysis</span><span>Fleet data</span></div>
+            <div class="interest-links"><a class="text-link" href="https://www.cat.com/en_US/by-industry/quarry-aggregates/technology-for-quarry-aggregates/productivity.html" target="_blank" rel="noopener">Industry context: VisionLink <span class="arrow" aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="interest-card">
+          <div class="interest-visual">
+            <div class="system-diagram" role="img" aria-label="Office internet extended over a long-range Wi-Fi HaLow link to machinery at a remote work location">
+              <p class="diagram-kicker">Wi-Fi HaLow / Remote Field Network</p>
+              <div class="diagram-flow">
+                <span class="diagram-node"><strong>Site office</strong><small>Existing internet</small></span>
+                <i aria-hidden="true">⇢</i>
+                <span class="diagram-node"><strong>HaLow link</strong><small>Sub-1 GHz Wi-Fi</small></span>
+                <i aria-hidden="true">⇢</i>
+                <span class="diagram-node"><strong>Field machine</strong><small>Local data access</small></span>
+              </div>
+              <div class="diagram-metrics"><span>Survey files</span><span>Design data</span><span>Machine access</span><span>Open IP network</span></div>
+            </div>
+          </div>
+          <div class="interest-content">
+            <p class="interest-status">Prototype</p>
+            <h2 class="card-title">Long-Range HaLow Field Network</h2>
+            <p class="card-desc">This prototype uses Wi-Fi HaLow radios, Raspberry Pi Zero 2 W field nodes, and a Raspberry Pi 4 gateway to extend site office connectivity to remote equipment. Intended uses include survey data transfer, design file exchange, and equipment communication. Range depends on terrain, antenna placement, interference, and line of sight.</p>
+            <div class="interest-tech" aria-label="Project technologies"><span>Wi-Fi HaLow</span><span>Raspberry Pi</span><span>OpenWrt</span><span>Field networking</span></div>
+            <div class="interest-links">
+              <a class="text-link" href="https://openmanet.github.io/docs/hardware/raspberry-pi" target="_blank" rel="noopener">OpenMANET hardware <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://www.morsemicro.com/2024/09/09/pushing-the-limits-wi-fi-halow-testing-in-joshua-tree-national-park/" target="_blank" rel="noopener">HaLow field test <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="interest-card">
+          <div class="interest-visual">
+            <div class="system-diagram" role="img" aria-label="Solar-powered Meshtastic nodes relaying community messages across neighborhoods to form a resilient city mesh">
+              <p class="diagram-kicker">LoRa Mesh / Community Resilience</p>
+              <div class="diagram-flow">
+                <span class="diagram-node"><strong>Solar node</strong><small>Low-cost, off-grid power</small></span>
+                <i aria-hidden="true">⇢</i>
+                <span class="diagram-node"><strong>Neighborhood relay</strong><small>Multi-hop messaging</small></span>
+                <i aria-hidden="true">⇢</i>
+                <span class="diagram-node"><strong>City mesh</strong><small>Community-scale reach</small></span>
+              </div>
+              <div class="diagram-metrics"><span>LoRa radio</span><span>Solar power</span><span>Battery backup</span><span>No cell towers</span></div>
+            </div>
+          </div>
+          <div class="interest-content">
+            <p class="interest-status">In planning</p>
+            <h2 class="card-title">Houston Community Resilience Mesh</h2>
+            <p class="card-desc">I am exploring a Houston-area Meshtastic network that would relay short messages over LoRa during cellular or internet outages. The proposed nodes would use solar power, battery backup, and weather-resistant enclosures. The network is intended to supplement established emergency communications.</p>
+            <div class="interest-tech" aria-label="Project technologies"><span>Meshtastic</span><span>LoRa</span><span>Solar power</span><span>Disaster readiness</span></div>
+            <div class="interest-links">
+              <a class="text-link" href="https://meshtastic.org/" target="_blank" rel="noopener">Explore Meshtastic <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://site.meshtastic.org/" target="_blank" rel="noopener">Coverage planning tool <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="interest-panel" id="track-field-panel" role="tabpanel" aria-labelledby="track-field-tab" data-interest-panel="track-field" hidden>
+        <section class="coaching-section" aria-labelledby="coaching-title">
+          <div class="coaching-heading">
+            <h2 id="coaching-title">Track &amp; Field coaching</h2>
+            <p>I have coached track and field for kindergarten through eighth-grade students at St. Vincent de Paul Catholic School. Practices focus on event fundamentals, structured drills, and individual feedback.</p>
+          </div>
+          <div class="coaching-contact">
+            <h3>Private coaching</h3>
+            <p>Contact me to discuss goals, experience level, scheduling, and coaching availability.</p>
+            <div class="coaching-actions">
+              <a class="button" href="mailto:hinojosasb72@gmail.com?subject=Private%20Coaching%20Inquiry">Ask about private coaching ↗</a>
+              <a class="text-link" href="contact.html">Contact page <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="editorial-shell footer-shell">
+      <p>Jorge Hinojosa <span>· Houston, Texas</span></p>
+      <div><a href="mailto:hinojosasb72@gmail.com">Email me ↗</a></div>
+    </div>
+  </footer>
+</body>
+</html>

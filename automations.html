@@ -1,41 +1,68 @@
-<!doctype html><html lang="en"><head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="description" content="Browse the complete, deduplicated catalog of automations and workflow systems built by Jorge Hinojosa." />
-<title>Automations | Jorge Hinojosa</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Browse the complete, deduplicated catalog of automations and workflow systems built by Jorge Hinojosa." />
+  <title>Automations | Jorge Hinojosa</title>
+  <link rel="preload" href="assets/fonts/NotoSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="editorial.css?v=streamlined-2026" />
+  <script src="automations.js?v=streamlined-2026" defer></script>
+  <script src="editorial.js?v=streamlined-2026" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JH</span>Jorge Hinojosa</a>
+      <div class="nav-links">
+        <a href="projects.html">Projects</a>
+        <a href="automations.html">Automations</a>
+        <a href="timeline.html" data-experience-link>Experience</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
+  <main class="page-content automation-catalog-page" id="main-content">
+    <div class="editorial-shell">
+      <header class="compact-page-heading"><h1>Automations</h1></header>
+      <section id="automation-catalog" class="catalog-controls" aria-label="Automation catalog controls">
+        <button class="catalog-search-toggle" type="button" aria-label="Open automation search" aria-expanded="false" aria-controls="automation-search-panel" data-automation-search-toggle>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="10.5" cy="10.5" r="6" />
+            <path d="m15 15 4.5 4.5" />
+          </svg>
+        </button>
+        <div class="catalog-filter-group" aria-label="Filter automations">
+          <button class="catalog-filter is-active" type="button" data-automation-filter="all">All</button>
+          <button class="catalog-filter" type="button" data-automation-filter="cad">CAD</button>
+          <button class="catalog-filter" type="button" data-automation-filter="excel">Excel</button>
+          <button class="catalog-filter" type="button" data-automation-filter="field">Field Operations</button>
+          <button class="catalog-filter" type="button" data-automation-filter="reporting">Reporting</button>
+          <button class="catalog-filter" type="button" data-automation-filter="apps">Apps &amp; Platforms</button>
+          <button class="catalog-filter" type="button" data-automation-filter="ai">AI</button>
+          <button class="catalog-filter" type="button" data-automation-filter="utility">Utilities</button>
+        </div>
+        <div class="catalog-count" aria-live="polite"><strong data-automation-count>0</strong><span>automations</span></div>
+        <div class="catalog-search-panel" id="automation-search-panel" hidden>
+          <input class="catalog-search" type="search" aria-label="Search automations" placeholder="Search automations" data-automation-search autocomplete="off" />
+          <button class="button" type="button" data-automation-search-clear hidden>Clear</button>
+        </div>
+      </section>
 
-<link rel="preload" href="assets/fonts/NotoSans-Regular.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="stylesheet" href="editorial.css?v=catalog-search-icon" /><script src="automations.js?v=compact-pages" defer></script><script src="editorial.js?v=catalog-search-icon" defer></script></head><body>
-<a class="skip-link" href="#main-content">Skip to content</a>
-<nav class="site-nav" aria-label="Primary navigation"><div class="nav-shell"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JH</span>Jorge Hinojosa</a><div class="nav-links"><a href="projects.html">Projects</a><a href="automations.html">Automations</a><a href="timeline.html" data-experience-link>Experience</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div></div></nav>
-<main class="page-content automation-catalog-page" id="main-content"><div class="editorial-shell">
-<header class="compact-page-heading"><h1>Automations</h1></header>
-<section id="automation-catalog" class="catalog-controls" aria-label="Automation catalog controls">
-<button class="catalog-search-toggle" type="button" aria-label="Open automation search" aria-expanded="false" aria-controls="automation-search-panel" data-automation-search-toggle>
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false">
-    <circle cx="10.5" cy="10.5" r="6" />
-    <path d="m15 15 4.5 4.5" />
-  </svg>
-</button>
-<div class="catalog-filter-group" aria-label="Filter automations">
-<button class="catalog-filter is-active" type="button" data-automation-filter="all">All</button>
-<button class="catalog-filter" type="button" data-automation-filter="cad">CAD</button>
-<button class="catalog-filter" type="button" data-automation-filter="excel">Excel</button>
-<button class="catalog-filter" type="button" data-automation-filter="field">Field Operations</button>
-<button class="catalog-filter" type="button" data-automation-filter="reporting">Reporting</button>
-<button class="catalog-filter" type="button" data-automation-filter="apps">Apps &amp; Platforms</button>
-<button class="catalog-filter" type="button" data-automation-filter="ai">AI</button>
-<button class="catalog-filter" type="button" data-automation-filter="utility">Utilities</button>
-</div>
-<div class="catalog-count" aria-live="polite"><strong data-automation-count>0</strong><span>automations</span></div>
-<div class="catalog-search-panel" id="automation-search-panel" hidden>
-  <input class="catalog-search" type="search" aria-label="Search automations" placeholder="Search automations" data-automation-search autocomplete="off" />
-  <button class="button" type="button" data-automation-search-clear hidden>Clear</button>
-</div>
-</section>
+      <section class="automation-grid" data-automation-grid aria-label="Automations"></section>
+      <p class="catalog-empty" data-automation-empty hidden>No automations match that search.</p>
+      <noscript><p class="catalog-empty">Enable JavaScript to browse the automation catalog.</p></noscript>
+    </div>
+  </main>
 
-<section class="automation-grid" data-automation-grid aria-label="Automations"></section>
-<p class="catalog-empty" data-automation-empty hidden>No automations match that search.</p>
-<noscript><p class="catalog-empty">Enable JavaScript to browse the automation catalog.</p></noscript>
-</div></main><footer class="site-footer"><div class="editorial-shell footer-shell"><p>Jorge Hinojosa <span>· Houston, Texas</span></p><div><a href="mailto:hinojosasb72@gmail.com">Email me ↗</a></div></div></footer>
-</body></html>
+  <footer class="site-footer">
+    <div class="editorial-shell footer-shell">
+      <p>Jorge Hinojosa <span>· Houston, Texas</span></p>
+      <div><a href="mailto:hinojosasb72@gmail.com">Email me ↗</a></div>
+    </div>
+  </footer>
+</body>
+</html>

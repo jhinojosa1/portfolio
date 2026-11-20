@@ -25,6 +25,8 @@ Purpose: Portfolio project.
 - [x] Redesign the homepage around CP2 and Field Note, and align automation search with the category filters.
 - [x] Replace the always-visible automation search field with a search icon.
 - [x] Enlarge all five organization logos on the Experience page.
+- [x] Streamline the full-site redesign across all eleven public pages, removing redundant sections and visual bloat while preserving the SOM-inspired monochrome and architectural navy aesthetic.
+- [ ] Replace the placeholder `href="#"` link for the Field Note website on `index.html` once the final URL is ready.
 - [ ] Obtain Jorge’s design approval before merging to `main`.
 
 ## Active TODOs

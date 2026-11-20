@@ -45,11 +45,14 @@ Experience uses the ENTACT, Lockwood, Andrews & Newnam, BioNatal, St. Vincent de
 `photo-shortlist.html` and `assets/featured/candidates/` are local review materials excluded by `.gitignore`. They contain three candidate images for each featured project. Confirm usage permission before moving a non-Creative-Commons candidate into the public site.
 ## Site Pages
 
-- `index.html` — engineering introduction and Field Note feature, followed by the Venture Global CP2 case study and two more projects.
+- `index.html` — engineering introduction and Field Note feature, followed by the Venture Global CP2 case study, Clifty Creek, and TxDOT I-35.
 - `projects.html` — selected project collection.
-- `timeline.html` — career and project timeline.
-- `interests.html` — working approach and technical interests.
-- `contact.html` — contact information.
+- `timeline.html` — career and project timeline with organization marks and linked case studies.
+- `education.html` — Rice University engineering degree and NCAA Division I Track & Field gallery.
+- `interests.html` — technical field-networking prototypes and youth Track & Field coaching.
+- `automations.html` — searchable, filterable 85-entry automation catalog with screenshot previews and lightbox viewer.
+- `resume.html` — PDF download and embedded desktop viewer with mobile download fallback.
+- `contact.html` — direct contact details and FormSubmit inquiry form.
 
 Navigation is repeated across each page. Update the shared navigation block consistently when adding a new page.
 ## Resume
